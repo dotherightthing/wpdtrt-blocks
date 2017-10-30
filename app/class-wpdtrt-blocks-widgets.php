@@ -19,7 +19,7 @@
 	 *
 	 * @param array $options Plugin options required by Widget
 	 */
-	class wpdtrt_blocks_Widget_1 extends DoTheRightThing\WPPlugin\Widget{};
+	class WPDTRT_Blocks_Widget_1 extends DoTheRightThing\WPPlugin\Widget{};
 
 //}
 

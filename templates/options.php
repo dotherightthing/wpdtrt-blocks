@@ -21,7 +21,7 @@
   <div id="icon-options-general" class="icon32"></div>
   <h1>
     <?php esc_attr_e( 'DTRT Blocks', 'wpdtrt-blocks' ); ?>
-    <span class="wpdtrt-blocks-version"><?php echo wpdtrt_blocks_VERSION; ?></span>
+    <span class="wpdtrt-blocks-version"><?php echo WPDTRT_BLOCKS_VERSION; ?></span>
   </h1>
 
   <?php

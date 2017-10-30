@@ -41,7 +41,7 @@ use DoTheRightThing\WPPlugin\Widget;
  * @link https://codex.wordpress.org/Determining_Plugin_and_Content_Directories#Plugins
  */
 
-if( ! defined( 'wpdtrt_blocks_VERSION' ) ) {
+if( ! defined( 'WPDTRT_BLOCKS_VERSION' ) ) {
 /**
  * Plugin version.
  *
@@ -54,10 +54,10 @@ if( ! defined( 'wpdtrt_blocks_VERSION' ) ) {
  * @since     0.1.0
  * @version   1.0.0
  */
-  define( 'wpdtrt_blocks_VERSION', '0.1' );
+  define( 'WPDTRT_BLOCKS_VERSION', '0.1' );
 }
 
-if( ! defined( 'wpdtrt_blocks_PATH' ) ) {
+if( ! defined( 'WPDTRT_BLOCKS_PATH' ) ) {
 /**
  * Plugin directory filesystem path.
  *
@@ -70,10 +70,10 @@ if( ! defined( 'wpdtrt_blocks_PATH' ) ) {
  * @since     0.1.0
  * @version   1.0.0
  */
-  define( 'wpdtrt_blocks_PATH', plugin_dir_path( __FILE__ ) );
+  define( 'WPDTRT_BLOCKS_PATH', plugin_dir_path( __FILE__ ) );
 }
 
-if( ! defined( 'wpdtrt_blocks_URL' ) ) {
+if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
 /**
  * Plugin directory URL path.
  *
@@ -86,7 +86,7 @@ if( ! defined( 'wpdtrt_blocks_URL' ) ) {
  * @since     0.1.0
  * @version   1.0.0
  */
-  define( 'wpdtrt_blocks_URL', plugin_dir_url( __FILE__ ) );
+  define( 'WPDTRT_BLOCKS_URL', plugin_dir_url( __FILE__ ) );
 }
 
 /**
@@ -98,14 +98,14 @@ if( ! defined( 'wpdtrt_blocks_URL' ) ) {
 
   // base classes
   // note: the base class includes the autoload file
-  require_once(wpdtrt_blocks_PATH . 'vendor/dotherightthing/wpdtrt-plugin/index.php');
+  require_once(WPDTRT_BLOCKS_PATH . 'vendor/dotherightthing/wpdtrt-plugin/index.php');
 
   // sub classes
-  require_once(wpdtrt_blocks_PATH . 'app/class-wpdtrt-blocks-plugin.php');
-  require_once(wpdtrt_blocks_PATH . 'app/class-wpdtrt-blocks-widgets.php');
+  require_once(WPDTRT_BLOCKS_PATH . 'app/class-wpdtrt-blocks-plugin.php');
+  require_once(WPDTRT_BLOCKS_PATH . 'app/class-wpdtrt-blocks-widgets.php');
 
   // functions
-  require_once(wpdtrt_blocks_PATH . 'config/tgm-plugin-activation.php');
+  require_once(WPDTRT_BLOCKS_PATH . 'config/tgm-plugin-activation.php');
 
   /**
    * Plugin initialisaton
@@ -117,7 +117,7 @@ if( ! defined( 'wpdtrt_blocks_URL' ) ) {
    *
    * @see https://wp-mix.com/wordpress-widget_init-not-working/
    * @see https://codex.wordpress.org/Plugin_API/Action_Reference
-   * @todo Add a constructor function to wpdtrt_blocks_Plugin, to explain the options array
+   * @todo Add a constructor function to WPDTRT_Blocks_Plugin, to explain the options array
    */
   function wpdtrt_blocks_init() {
 
@@ -125,17 +125,22 @@ if( ! defined( 'wpdtrt_blocks_URL' ) ) {
     // because the object does not exist until the WordPress init action has fired
     global $wpdtrt_blocks_plugin;
 
-    $wpdtrt_blocks_plugin = new wpdtrt_blocks_Plugin(
+    $wpdtrt_blocks_plugin = new WPDTRT_Blocks_Plugin(
       array(
+        'url' => WPDTRT_BLOCKS_URL,
         'prefix' => 'wpdtrt_blocks',
         'slug' => 'wpdtrt-blocks',
         'menu_title' => __('Blocks', 'wpdtrt-blocks'),
         'developer_prefix' => 'DTRT',
-        'plugin_directory' => wpdtrt_blocks_PATH,
+        'path' => WPDTRT_BLOCKS_PATH,
+        'messages' => array(
+          'success' => __('Settings successfully updated', 'wpdtrt-blocks')
+        ),
         'option_defaults' => array(
           'google_maps_api_key' => '',
           'datatype' => 'photos'
-        )
+        ),
+        'version' => WPDTRT_BLOCKS_VERSION
       )
     );
   }
@@ -192,7 +197,7 @@ if( ! defined( 'wpdtrt_blocks_URL' ) ) {
     // but we do need to register widgets and shortcodes
     // should we do that here or in the class files?
 
-    $wpdtrt_blocks_widget_1 = new wpdtrt_blocks_Widget_1(
+    $wpdtrt_blocks_widget_1 = new WPDTRT_Blocks_Widget_1(
       array(
         'name' => 'wpdtrt_blocks_widget_1',
         'title' => __('DTRT Blocks Widget', 'wpdtrt-blocks'),
@@ -209,7 +214,7 @@ if( ! defined( 'wpdtrt_blocks_URL' ) ) {
 
     // Missing argument 1 for Widget::__construct(),
     // called in ~/wp-includes/class-wp-widget-factory.php on line 106
-    //register_widget( 'wpdtrt_blocks_Widget_1' );
+    //register_widget( 'WPDTRT_Blocks_Widget_1' );
 
     // 4.6.0 Updated the `$widget` parameter to also accept
     // a WP_Widget instance object

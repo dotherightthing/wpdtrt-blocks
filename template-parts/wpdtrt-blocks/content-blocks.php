@@ -25,7 +25,7 @@ $enlargement = null;
 $number = null;
 
 // access to plugin
-$parent_plugin = null;
+$plugin = null;
 
 // Options: display $args + widget $instance settings + access to plugin
 $options = get_query_var( 'options' );
@@ -34,8 +34,8 @@ $options = get_query_var( 'options' );
 // @link http://kb.network.dan/php/wordpress/extract/
 extract( $options, EXTR_IF_EXISTS );
 
-$parent_plugin_options = $parent_plugin->get_options(); // plugin options
-$google_maps_api_key = $parent_plugin_options['google_maps_api_key'];
+$plugin_options = $plugin->get_options(); // plugin options
+$google_maps_api_key = $plugin_options['google_maps_api_key'];
 
 // Convert shortcode string attributes to integers
 $max_length = (int)$number;
@@ -62,15 +62,15 @@ echo $before_title . $title . $after_title;
   <ul>
   <?php
     // get the API data here, to avoid overloading the query_var
-    $data = $parent_plugin->get_api_data();
+    $data = $plugin->get_api_data();
 
     foreach( $data as $key => $val ):
 
       $data_object =      $data[$key];
-      $latlng =           $parent_plugin->get_api_latlng( $data_object );
-      $thetitle =         $parent_plugin->get_api_title( $data_object );
-      $enlargement_url =  $parent_plugin->get_api_thumbnail_url( $data_object, true, $google_maps_api_key );
-      $thumbnail_url =    $parent_plugin->get_api_thumbnail_url( $data_object, false, $google_maps_api_key );
+      $latlng =           $plugin->get_api_latlng( $data_object );
+      $thetitle =         $plugin->get_api_title( $data_object );
+      $enlargement_url =  $plugin->get_api_thumbnail_url( $data_object, true, $google_maps_api_key );
+      $thumbnail_url =    $plugin->get_api_thumbnail_url( $data_object, false, $google_maps_api_key );
       $alt =              $latlng ? ( esc_html__('Map showing the co-ordinates', 'wpdtrt-blocks') . ' ' . $latlng ) : $thetitle;
   ?>
       <li>

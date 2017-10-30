@@ -18,7 +18,7 @@
  * @version 	1.0.0
  * @todo 		Add constructor function for readability
  */
-class wpdtrt_blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
+class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 
     /**
      * Request the data from the API
@@ -41,7 +41,6 @@ class wpdtrt_blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 		$options = get_option( $this->get_prefix() );
 
 		$datatype = $options['datatype'];
-		$last_updated = $options['last_updated'];
 
 		if ( !isset ( $datatype ) ) {
 			return (object)[];

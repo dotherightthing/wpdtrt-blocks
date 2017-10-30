@@ -134,7 +134,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         'developer_prefix' => 'DTRT',
         'path' => WPDTRT_BLOCKS_PATH,
         'messages' => array(
-          'success' => __('Settings successfully updated', 'wpdtrt-blocks')
+          'success' => __('settings successfully updated', 'wpdtrt-blocks')
         ),
         'option_defaults' => array(
           'google_maps_api_key' => '',

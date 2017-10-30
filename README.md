@@ -1,10 +1,6 @@
 # DTRT Blocks
 
-Demo plugin which uses `wpdtrt-plugin`.
-
-## Demo
-
-http://wpdemo.dan/2017/09/29/24/
+Demo plugin which uses [wpdtrt-plugin](https://github.com/dotherightthing/wpdtrt-plugin).
 
 ## Usage
 

@@ -1,0 +1,102 @@
+<?php
+/**
+ * Displays data blocks
+ *
+ * @package     wpdtrt_blocks
+ * @subpackage  wpdtrt_blocks/template-parts
+ * @since     0.6.0
+ * @version   1.0.0
+ *
+ * @todo Is this query var seen by other plugins which also use this class?
+ */
+
+// Predeclare variables
+
+// Internal WordPress arguments available to widgets
+// This allows us to use the same template for shortcodes and front-end widgets
+$before_widget = null; // register_sidebar
+$before_title = null; // register_sidebar
+$title = null;
+$after_title = null; // register_sidebar
+$after_widget = null; // register_sidebar
+
+// shortcode options
+$enlargement = null;
+$number = null;
+
+// access to plugin
+$parent_plugin = null;
+
+// Options: display $args + widget $instance settings + access to plugin
+$options = get_query_var( 'options' );
+
+// Overwrite variables from array values
+// @link http://kb.network.dan/php/wordpress/extract/
+extract( $options, EXTR_IF_EXISTS );
+
+$parent_plugin_options = $parent_plugin->get_options(); // plugin options
+$google_maps_api_key = $parent_plugin_options['google_maps_api_key'];
+
+// Convert shortcode string attributes to integers
+$max_length = (int)$number;
+$count = 0;
+
+ /**
+  * filter_var
+  * Return variable value if it passes the filter, otherwise return false
+  * Note: "0" is falsy
+  * @link http://stackoverflow.com/a/15075609
+  * @link http://php.net/manual/en/function.filter-var.php
+  * @link http://php.net/manual/en/language.types.boolean.php#112190
+  * @link http://php.net/manual/en/language.types.boolean.php#118181
+  */
+$has_enlargement = filter_var( $enlargement, FILTER_VALIDATE_BOOLEAN );
+
+// WordPress widget options (widget, not shortcode)
+echo $before_widget;
+echo $before_title . $title . $after_title;
+
+?>
+
+<div class="wpdtrt-blocks-items frontend">
+  <ul>
+  <?php
+    // get the API data here, to avoid overloading the query_var
+    $data = $parent_plugin->get_api_data();
+
+    foreach( $data as $key => $val ):
+
+      $data_object =      $data[$key];
+      $latlng =           $parent_plugin->get_api_latlng( $data_object );
+      $thetitle =         $parent_plugin->get_api_title( $data_object );
+      $enlargement_url =  $parent_plugin->get_api_thumbnail_url( $data_object, true, $google_maps_api_key );
+      $thumbnail_url =    $parent_plugin->get_api_thumbnail_url( $data_object, false, $google_maps_api_key );
+      $alt =              $latlng ? ( esc_html__('Map showing the co-ordinates', 'wpdtrt-blocks') . ' ' . $latlng ) : $thetitle;
+  ?>
+      <li>
+        <?php if ( $has_enlargement === true ): ?>
+          <a href="<?php echo $enlargement_url; ?>">
+            <img src="<?php echo $thumbnail_url; ?>" alt="<?php echo $alt; ?>. ">
+          </a>
+        <?php else: ?>
+            <img src="<?php echo $thumbnail_url; ?>" alt="<?php echo $alt; ?>. ">
+        <?php endif; ?>
+      </li>
+
+  <?php
+      $count++;
+
+      // when we reach the end of the demo sample, stop looping
+      if ($count === $max_length):
+        break;
+      endif;
+
+    endforeach;
+  ?>
+  </ul>
+</div>
+
+<?php
+  // WordPress widget options (not output with shortcode)
+  echo $after_widget;
+?>

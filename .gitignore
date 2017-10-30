@@ -1,0 +1,8 @@
+documentation
+logs
+node_modules
+tests
+composer.phar
+.DS_Store
+vendor/*
+!vendor/tgm-plugin-activation

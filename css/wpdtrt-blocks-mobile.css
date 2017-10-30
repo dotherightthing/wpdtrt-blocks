@@ -1,0 +1,49 @@
+/**
+ * Styles for the public front-end
+ *
+ * This file contains CSS.
+ *
+ * @package     wpdtrt_blocks
+ * @subpackage  wpdtrt_blocks/css
+ * @since       0.6.0
+ */
+/**
+ * Variables
+ *
+ * @package     wpdtrt_blocks
+ * @subpackage  wpdtrt_blocks/css
+ * @since       0.6.0
+ */
+/**
+ * SCSS @extends
+ *
+ * @package     wpdtrt_blocks
+ * @subpackage  wpdtrt_blocks/css
+ * @since       0.6.0
+ */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.clear:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.text-sharpen {
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

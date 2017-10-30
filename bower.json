@@ -1,0 +1,17 @@
+{
+  "name": "wpdtrt-blocks",
+  "version": "0.1.0",
+  "description": "Demo plugin using wpdtrt-plugin classes",
+  "main": "readme.txt",
+  "authors": [
+    "Dan Smith <dev@dotherightthing.co.nz>"
+  ],
+  "devDependencies": {},
+  "license": "All Rights Reserved",
+  "homepage": "https://github.com/dotherightthing/wpdtrt-blocks",
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "private": true
+}

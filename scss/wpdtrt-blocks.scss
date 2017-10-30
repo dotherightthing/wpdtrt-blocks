@@ -1,0 +1,77 @@
+/**
+ * Styles for the public front-end
+ *
+ * This file contains CSS.
+ *
+ * @package     wpdtrt_blocks
+ * @subpackage  wpdtrt_blocks/css
+ * @since       0.6.0
+ */
+
+@import "wpdtrt-blocks-variables";
+@import "wpdtrt-blocks-extends";
+//@import "icons/icomoon/style.scss";
+
+.wpdtrt-blocks-items {
+  counter-reset: blocks;
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: bold;
+  font-size: .9em;
+  padding: 8px 0 0 8px;
+  margin-bottom: 8px;
+}
+
+.wpdtrt-blocks-items::before {
+  content: attr(data-number) " blocks";
+  display: block;
+  padding-bottom: 8px;
+}
+
+.wpdtrt-blocks-items[data-number="1"]::before {
+  content: attr(data-number) " block";
+}
+
+.wpdtrt-blocks-items::after {
+  content: "";
+  display: table;
+  width: 100%;
+  clear: both;
+}
+
+.wpdtrt-blocks-items ul,
+.wpdtrt-blocks-items li {
+  list-style: none;
+}
+
+.wpdtrt-blocks-items li {
+  position: relative;
+  float: left;
+  margin: 0 8px 8px 0;
+  height: 150px;
+  width: 150px;
+}
+
+.widget .wpdtrt-blocks-items ul li {
+  padding: 0;
+  border: 0;
+}
+
+.widget .wpdtrt-blocks-items ul li + li {
+  margin-top: 0; /* reset */
+}
+
+.wpdtrt-blocks-items li > a::before {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  background-color: #000;
+  content: "+";
+  padding: 8px;
+}
+
+.wpdtrt-blocks-items li img {
+  width: 150px;
+  height: 150px;
+}

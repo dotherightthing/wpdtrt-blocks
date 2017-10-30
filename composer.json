@@ -1,0 +1,25 @@
+{
+	"name": "dotherightthingnz/wpdtrt-blocks",
+	"description": "Demo plugin using wpdtrt-plugin classes",
+	"type": "library",
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "phpdocumentor/phpdocumentor": "2.*"
+    },
+    "require": {
+        "dotherightthing/wpdtrt-plugin": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com:dotherightthing/wpdtrt-plugin.git"
+        }
+    ],
+    "authors": [
+        {
+            "name": "Dan Smith",
+            "email": "dev@dotherightthing.co.nz"
+        }
+    ]
+}

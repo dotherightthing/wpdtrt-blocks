@@ -1,0 +1,25 @@
+{
+  "generator-wp-plugin-boilerplate": {
+    "name": "wpdtrt-blocks",
+    "nameSafe": "wpdtrt_blocks",
+    "nameFriendly": "DTRT Blocks",
+    "nameFriendlySafe": "wpdtrt_blocks",
+    "nameAdminMenu": "Blocks",
+    "urlAdminMenu": "wpdtrt-blocks",
+    "description": "Demo plugin using wpdtrt-plugin classes",
+    "tags": "blocks, maps, swatches",
+    "homepage": "https://github.com/dotherightthing/wpdtrt-blocks",
+    "license": "GPLv2 or later",
+    "licenseUrl": "http://www.gnu.org/licenses/gpl-2.0.html",
+    "donateUrl": "http://dotherightthing.co.nz",
+    "wpVersion": "4.8.2",
+    "phpVersion": "5.6.30",
+    "authorName": "Dan Smith",
+    "authorWordPressName": "dotherightthingnz",
+    "authorEmail": "dev@dotherightthing.co.nz",
+    "authorUrl": "https://profiles.wordpress.org/dotherightthingnz",
+    "repositoryType": "git",
+    "repositoryUrl": "git@github.com:dotherightthing/wpdtrt-blocks.git",
+    "version": "0.1.0"
+  }
+}

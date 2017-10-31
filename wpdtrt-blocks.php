@@ -243,14 +243,14 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
       array(
         'name' => 'wpdtrt_blocks_widget_1',
         'title' => __('DTRT Blocks Widget', 'wpdtrt-blocks'),
-        //'classname' => 'wpdtrt-blocks-widget',
         'description' => __('Display a selection of blocks', 'wpdtrt-blocks'),
         'plugin' => $wpdtrt_blocks_plugin,
         'template' => 'blocks',
-        'user_options' => array(
+        'selected_instance_options' => array(
           'number',
           'enlargement'
         )
+        //'classname' => 'wpdtrt-blocks-widget',
       )
     );
 
@@ -280,7 +280,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         'name' => 'wpdtrt_blocks_shortcode_1',
         'plugin' => $wpdtrt_blocks_plugin,
         'template' => 'blocks',
-        'user_options' => array(
+        'selected_instance_options' => array(
           'number',
           'enlargement'
         )

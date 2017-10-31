@@ -18,8 +18,7 @@ echo $this->render_form_element( 'title', array(
   'instance' => $instance
 ) );
 
-$options = $this->get_options();
-$instance_options = $options['instance_options'];
+$instance_options = $this->get_instance_options();
 
 foreach( $instance_options as $name => $attributes ) {
   $this->render_form_element( $name, $attributes );

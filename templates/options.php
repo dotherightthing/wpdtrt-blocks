@@ -51,27 +51,12 @@
       <table class="form-table">
         <tbody>
           <?php
-            echo $this->render_form_element( array(
-              'type' => 'password',
-              'name' => 'google_maps_api_key',
-              'label' => esc_html__('Google maps API key', 'wpdtrt-blocks'),
-              'size' => 10,
-            ) );
+            $plugin_options = $this->get_plugin_options();
+
+            foreach( $plugin_options as $name => $attributes ) {
+              echo $this->render_form_element( $name, $attributes );
+            }
           ?>
-          <tr>
-            <th scope="row">
-              <label for="datatype">
-                <?php _e('Data type', 'wpdtrt-blocks'); ?>
-              </label>
-            </th>
-            <td>
-              <select name="datatype" id="datatype">
-                <option value="">None</option>
-                <option value="photos" <?php selected( $datatype, "photos" ); ?>><?php _e('Coloured blocks', 'wpdtrt-blocks'); ?></option>
-                <option value="users" <?php selected( $datatype, "users" ); ?>><?php _e('Maps', 'wpdtrt-blocks'); ?></option>
-              </select>
-            </td>
-          </tr>
         </tbody>
       </table>
     </fieldset>

@@ -125,6 +125,50 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
     // because the object does not exist until the WordPress init action has fired
     global $wpdtrt_blocks_plugin;
 
+    /**
+     * Admin settings
+     */
+    $plugin_options = array(
+      'google_maps_api_key' => array(
+        'type' => 'password',
+        'label' => esc_html__('The Google maps API key', 'wpdtrt-blocks'),
+        'size' => 10,
+        'value' => '',
+      ),
+      'datatype' => array(
+        'type' => 'select',
+        'label' => __('The Data type', 'wpdtrt-blocks'),
+        'options' => array(
+          'photos' => array(
+            'text' => __('A Coloured blocks', 'wpdtrt-blocks')
+          ),
+          'users' => array(
+            'text' => __('B Maps', 'wpdtrt-blocks')
+          ),
+        ),
+        'value' => null
+      )
+    );
+
+    /**
+     * All options available to Widgets and Shortcodes
+     * @todo Widgets and Shortcodes choose which one they wish to use
+     */
+    $instance_options = array(
+      'number' => array(
+        'type' => 'number',
+        'label' => esc_html__('Number of blocks to display', 'wpdtrt-blocks'),
+        'size' => 4,
+        'value' => '1',
+        'tip' => '1 - COUNT_DATA',
+      ),
+      'enlargement' => array(
+        'type' => 'checkbox',
+        'label' => esc_html__('Link to enlargement?', 'wpdtrt-blocks'),
+        'value' => '0',
+      )
+    );
+
     $wpdtrt_blocks_plugin = new WPDTRT_Blocks_Plugin(
       array(
         'url' => WPDTRT_BLOCKS_URL,
@@ -136,10 +180,8 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         'messages' => array(
           'success' => __('settings successfully updated', 'wpdtrt-blocks')
         ),
-        'option_defaults' => array(
-          'google_maps_api_key' => '',
-          'datatype' => 'photos'
-        ),
+        'plugin_options' => $plugin_options,
+        'instance_options' => $instance_options,
         'version' => WPDTRT_BLOCKS_VERSION
       )
     );
@@ -205,9 +247,9 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         'description' => __('Display a selection of blocks', 'wpdtrt-blocks'),
         'plugin' => $wpdtrt_blocks_plugin,
         'template' => 'blocks',
-        'option_defaults' => array(
-          'number' => '1',
-          'enlargement' => '0' // 1 || 0
+        'user_options' => array(
+          'number',
+          'enlargement'
         )
       )
     );
@@ -238,9 +280,9 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         'name' => 'wpdtrt_blocks_shortcode_1',
         'plugin' => $wpdtrt_blocks_plugin,
         'template' => 'blocks',
-        'option_defaults' => array(
-          'number' => '1',
-          'enlargement' => '0' // 1 || 0
+        'user_options' => array(
+          'number',
+          'enlargement'
         )
       )
     );

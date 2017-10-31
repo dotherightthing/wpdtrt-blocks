@@ -12,27 +12,17 @@
  * @todo Add fields dynamically
  */
 
-echo $this->render_form_element( array(
+echo $this->render_form_element( 'title', array(
   'type' => 'text',
-  'name' => 'title',
   'label' => esc_html__('Title', 'wpdtrt-blocks'),
   'instance' => $instance
 ) );
 
-echo $this->render_form_element( array(
-  'type' => 'number',
-  'name' => 'number',
-  'label' => esc_html__('Number of blocks to display', 'wpdtrt-blocks'),
-  'size' => 4,
-  'tip' => '1 - ' . count($data),
-  'instance' => $instance
-) );
+$options = $this->get_options();
+$instance_options = $options['instance_options'];
 
-echo $this->render_form_element( array(
-  'type' => 'checkbox',
-  'name' => 'enlargement',
-  'label' => esc_html__('Link to enlargement?', 'wpdtrt-blocks'),
-  'instance' => $instance
-) );
+foreach( $instance_options as $name => $attributes ) {
+  $this->render_form_element( $name, $attributes );
+}
 
 ?>

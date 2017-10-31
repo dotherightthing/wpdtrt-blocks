@@ -40,13 +40,15 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 		// Load existing options
 		$options = get_option( $this->get_prefix() );
 
-		$datatype = $options['datatype'];
+		$plugin_options = $options['plugin_options'];
+		$datatype = $plugin_options['datatype'];
+		$selected_datatype = $datatype['value'];
 
-		if ( !isset ( $datatype ) ) {
+		if ( !isset ( $selected_datatype ) ) {
 			return (object)[];
 		}
 
-		$endpoint = 'http://jsonplaceholder.typicode.com/' . $datatype;
+		$endpoint = 'http://jsonplaceholder.typicode.com/' . $selected_datatype;
 
 		$args = array(
 			'timeout' => 30 // seconds to wait for the request to complete

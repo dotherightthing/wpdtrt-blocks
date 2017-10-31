@@ -21,7 +21,7 @@
   <div id="icon-options-general" class="icon32"></div>
   <h1>
     <?php esc_attr_e( 'DTRT Blocks', 'wpdtrt-blocks' ); ?>
-    <span class="wpdtrt-blocks-version"><?php echo WPDTRT_BLOCKS_VERSION; ?></span>
+    <span class="wpdtrt-blocks-version"><?php echo $this->get_version(); ?></span>
   </h1>
 
   <?php
@@ -79,11 +79,14 @@
   <?php
     /**
      * If the user has already chosen a content type,
-     * then $data will exist and contain the body of the resulting JSON.
+     * then $plugin_options['data'] will exist and contain the body of the resulting JSON.
      * We display a sample of the data, so the user can verify that they have chosen the type
      * which meets their needs.
      */
-    if ( isset( $data ) ) :
+    $plugin_options = $this->get_plugin_options();
+
+
+    if ( isset( $plugin_options['data'] ) ) :
 
       $max_length = 7;
   ?>
@@ -98,11 +101,11 @@
     </code>
   </p>
 
-  <p>This data set contains <?php echo count( $data ); ?> items.</p>
+  <p>This data set contains <?php echo count( $plugin_options['data'] ); ?> items.</p>
 
   <p>The first <?php echo $max_length; ?> are displayed below:</p>
 
-  <?php echo  do_shortcode( '[wpdtrt_blocks_shortcode_1 number="' . $max_length . '" enlargement="1"]' ); ?>
+  <?php echo do_shortcode( '[wpdtrt_blocks_shortcode_1 number="' . $max_length . '" enlargement="1"]' ); ?>
 
   <?php
   /**
@@ -115,9 +118,8 @@
    */
 
   // the data set
-  $options = $this->get_options();
 
-  $last_updated = $options['last_updated'];
+  $last_updated = $plugin_options['last_updated'];
 
   // use the date format set by the user
   $wp_date_format = get_option('date_format');
@@ -136,8 +138,8 @@
 
       $count = 0;
 
-      foreach( $data as $key => $val ) {
-        var_dump( $data[$key] );
+      foreach( $plugin_options['data'] as $key => $val ) {
+        var_dump( $plugin_options['data'][$key] );
 
         $count++;
 

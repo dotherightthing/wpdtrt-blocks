@@ -34,7 +34,7 @@ $options = get_query_var( 'options' );
 // @link http://kb.network.dan/php/wordpress/extract/
 extract( $options, EXTR_IF_EXISTS );
 
-$plugin_options = $plugin->get_options(); // plugin options
+$plugin_options = $plugin->get_plugin_options(); // plugin options
 $google_maps_api_key = $plugin_options['google_maps_api_key'];
 
 // Convert shortcode string attributes to integers

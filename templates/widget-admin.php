@@ -12,6 +12,11 @@
  * @todo Add fields dynamically
  */
 
+/**
+ * render_form_element is called from the widget-admin.php template,
+ * which is required by the form() method,
+ * which has access to the widget $instance.
+ */
 echo $this->render_form_element( 'title', array(
   'type' => 'text',
   'label' => esc_html__('Title', 'wpdtrt-blocks'),

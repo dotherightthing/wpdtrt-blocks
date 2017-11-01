@@ -17,16 +17,15 @@
  * which is required by the form() method,
  * which has access to the widget $instance.
  */
-echo $this->render_form_element( 'title', array(
+echo $this->render_form_element( $instance, 'title', array(
   'type' => 'text',
-  'label' => esc_html__('Title', 'wpdtrt-blocks'),
-  'instance' => $instance
+  'label' => esc_html__('Title', 'wpdtrt-blocks')
 ) );
 
 $instance_options = $this->get_instance_options();
 
 foreach( $instance_options as $name => $attributes ) {
-  $this->render_form_element( $name, $attributes );
+  	echo $this->render_form_element( $instance, $name, $attributes );
 }
 
 ?>

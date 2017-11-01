@@ -35,7 +35,7 @@ $options = get_query_var( 'options' );
 extract( $options, EXTR_IF_EXISTS );
 
 $plugin_options = $plugin->get_plugin_options(); // plugin options
-$google_maps_api_key = $plugin_options['google_maps_api_key'];
+$google_maps_api_key = $plugin_options['google_maps_api_key']['value'];
 
 // Convert shortcode string attributes to integers
 $max_length = (int)$number;

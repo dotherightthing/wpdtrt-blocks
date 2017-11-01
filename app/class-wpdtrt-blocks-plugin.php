@@ -30,25 +30,16 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
      * @version     1.0.0
      *
      * @return      object The body of the JSON response
-     * @todo 		check last_updated
-     * 				to determine whether to get again
-     * 				or get from wp options
+     * @todo 		check last_updated to determine whether to get again
+     * 				otherwise get it from wp options
      * 				as currently it's hitting the API every time
      */
     public function get_api_data() {
 
-		// Load existing options
-		$options = get_option( $this->get_prefix() );
+		$plugin_options = $this->get_plugin_options();
+		$datatype = $plugin_options['datatype']['value']; // value must be set in options array
 
-		$plugin_options = $options['plugin_options'];
-		$datatype = $plugin_options['datatype'];
-		$selected_datatype = $datatype['value'];
-
-		if ( !isset ( $selected_datatype ) ) {
-			return (object)[];
-		}
-
-		$endpoint = 'http://jsonplaceholder.typicode.com/' . $selected_datatype;
+		$endpoint = 'http://jsonplaceholder.typicode.com/' . $datatype;
 
 		$args = array(
 			'timeout' => 30 // seconds to wait for the request to complete

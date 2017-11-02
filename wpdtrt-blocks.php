@@ -96,8 +96,8 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
  * @version   1.0.0
  */
 
-  // base classes
-  // note: the base class includes the autoload file
+  // base class
+  // redundant, but includes the composer-generated autoload file if not already included
   require_once(WPDTRT_BLOCKS_PATH . 'vendor/dotherightthing/wpdtrt-plugin/index.php');
 
   // sub classes

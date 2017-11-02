@@ -94,32 +94,42 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 	*    This is because it is used to call the server side PHP function through admin-ajax.php.
 	*    If an action is not specified, admin-ajax.php will exit, and return 0 in the process.
 	*
-	* @see         https://codex.wordpress.org/AJAX_in_Plugins
-	* @todo        Create example
+	* See also $this->__construct()
+	* See also $this->render_js_backend()
+	* See also js/wpdtrt-foo-backend.js
 	*
 	* @since       0.1.0
 	* @version     1.0.0
 	*
-	* @todo 		Refactor this, referencing AJAX_in_Plugins
+	* @see         https://codex.wordpress.org/AJAX_in_Plugins
 	*/
 	public function refresh_api_data() {
 
 		$plugin_options = $this->get_plugin_options();
+		$existing_data = $plugin_options['data'];
 		$last_updated = $plugin_options['last_updated'];
 
-		// if the data does not exist, don't update it
-		if ( ! isset( $last_updated ) ) {
-			wp_die(); // only use in update function
+		// if the data has previously been requested
+		// only update it if it is stale
+		if ( isset( $last_updated ) ) {
+			$current_time = time();
+			$update_difference = $current_time - $last_updated;
+			$one_hour = (1 * 60 * 60);
+			$do_refresh = ( $update_difference > $one_hour );
+		}
+		else {
+			$do_refresh = true;
 		}
 
-		$current_time = time();
-		$update_difference = $current_time - $last_updated;
-		$one_hour = (1 * 60 * 60);
+		if ( $do_refresh ) {
+			$data = $this->get_api_data();
+		}
+		else {
+			$data = $existing_data;
+		}
 
-		$do_refresh = ( $update_difference > $one_hour );
-
-		// NOTE! uncomment for testing
-		// $do_refresh = true;
+		// create the Ajax response
+		print_r( $data );
 
 		/**
 		* Let the Ajax know when the entire function has completed
@@ -128,13 +138,7 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 		* Most of the time you should be using wp_die() in your Ajax callback function.
 		* This provides better integration with WordPress and makes it easier to test your code.
 		*/
-		if ( $do_refresh ) {
-			print_r( $this->get_api_data() ); // the Ajax response
-			wp_die();
-		}
-		else {
-			wp_die();
-		}
+		wp_die();
 	}
 
 	/**

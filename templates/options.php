@@ -14,6 +14,18 @@
  * @todo Add fields dynamically
  */
 
+  $plugin_options = $this->get_plugin_options();
+
+  $last_updated = $plugin_options['last_updated'];
+
+  // use the date format set by the user
+  $wp_date_format = get_option('date_format');
+  $wp_time_format = get_option('time_format');
+  $last_updated_str = date( $wp_time_format, $last_updated ) . ', ' . date( $wp_date_format, $last_updated );
+
+  $demo_shortcode_params = $this->demo_shortcode_params;
+  $max_length = $demo_shortcode_params['number'];
+
 ?>
 
 <div class="wrap">
@@ -51,8 +63,6 @@
       <table class="form-table">
         <tbody>
           <?php
-            $plugin_options = $this->get_plugin_options();
-
             foreach( $plugin_options as $name => $attributes ) {
               echo $this->render_form_element( $name, $attributes );
             }
@@ -83,13 +93,7 @@
      * We display a sample of the data, so the user can verify that they have chosen the type
      * which meets their needs.
      */
-    $plugin_options = $this->get_plugin_options();
-
-
-    if ( isset( $plugin_options['data'] ) ) :
-
-      $demo_shortcode_params = $this->demo_shortcode_params;
-      $max_length = $demo_shortcode_params['number'];
+    if ( isset( $plugin_options['data'] ) ):
   ?>
 
   <h2>
@@ -112,55 +116,23 @@
     </noscript>
   </div>
 
-  <?php
-  /**
-   * For the purposes of debugging, we also display the raw data.
-   * var_dump is prefereable to print_r,
-   * because it reveals the data types used,
-   * so we can check whether the data is in the expected format.
-   * @link http://kb.dotherightthing.co.nz/php/print_r-vs-var_dump/
-   * @todo Convert inline function into class method
-   */
-
-  // the data set
-
-  $last_updated = $plugin_options['last_updated'];
-
-  // use the date format set by the user
-  $wp_date_format = get_option('date_format');
-  $wp_time_format = get_option('time_format');
-
-  $last_updated_str = date( $wp_time_format, $last_updated ) . ', ' . date( $wp_date_format, $last_updated );
-  ?>
-
   <h2>
     <span><?php esc_attr_e( 'Sample data', 'wpdtrt-blocks'); ?></span>
   </h2>
 
   <p>The data used to generate the content above.</p>
 
-  <div class="wpdtrt-blocks-data"><pre><code><?php echo "{\r\n";
+  <div class="wpdtrt-blocks-data">
+    <?php echo $this->render_demo_shortcode_data(); ?>
+  </div>
 
-      $count = 0;
-
-      foreach( $plugin_options['data'] as $key => $val ) {
-        var_dump( $plugin_options['data'][$key] );
-
-        $count++;
-
-        // when we reach the end of the sample, stop looping
-        if ($count === $max_length) {
-          break;
-        }
-
-      }
-
-      echo "}\r\n"; ?></code></pre></div>
-
-    <p class="wpdtrt-blocks-date"><em><?php _e('Data generated:', 'wpdtrt-blocks'); echo ' ' . $last_updated; ?></em></p>
+  <p class="wpdtrt-blocks-date">
+    <em><?php _e('Data generated:', 'wpdtrt-blocks'); echo ' ' . $last_updated; ?></em>
+  </p>
 
   <?php
     endif;
   ?>
 
-</div> <!-- .wrap -->
+</div>
+<!-- .wrap -->

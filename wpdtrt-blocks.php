@@ -180,6 +180,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         'messages' => array(
           'loading' => __('Loading latest data...', 'wpdtrt-blocks'),
           'success' => __('settings successfully updated', 'wpdtrt-blocks'),
+          'insufficient_permissions' => __('Sorry, you do not have sufficient permissions to access this page.', 'wpdtrt-blocks'),
         ),
         'plugin_options' => $plugin_options,
         'instance_options' => $instance_options,

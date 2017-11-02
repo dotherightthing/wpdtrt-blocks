@@ -183,7 +183,12 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         ),
         'plugin_options' => $plugin_options,
         'instance_options' => $instance_options,
-        'version' => WPDTRT_BLOCKS_VERSION
+        'version' => WPDTRT_BLOCKS_VERSION,
+        'demo_shortcode_params' => array(
+          'id' => 'wpdtrt_blocks_shortcode_1',
+          'number' => '5',
+          'enlargement' => '0'
+        )
       )
     );
   }

@@ -88,7 +88,9 @@
 
     if ( isset( $plugin_options['data'] ) ) :
 
-      $max_length = 7;
+      $demo_shortcode_params = $this->demo_shortcode_params;
+      $max_length = $demo_shortcode_params['number'];
+      $enlargement = $demo_shortcode_params['enlargement'];
   ?>
 
   <h2>
@@ -97,7 +99,7 @@
 
   <p>Shortcode:
     <code>
-      <?php echo '[wpdtrt_blocks_shortcode_1 number="' . $max_length . '" enlargement="1"]'; ?>
+      <?php echo '[wpdtrt_blocks_shortcode_1 number="' . $max_length . '" enlargement="' . $enlargement . '"]'; ?>
     </code>
   </p>
 

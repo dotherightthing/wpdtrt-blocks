@@ -13,7 +13,7 @@
  * @package     wpdtrt_blocks
  * @subpackage  wpdtrt_blocks/config
  * @since       0.4.0
- * @todo 		Remove hardcoded variables wpdtrt-blocks
+ * @todo       	Move tgm-plugin-activation.php into parent plugin (#17)
  */
 
 /**

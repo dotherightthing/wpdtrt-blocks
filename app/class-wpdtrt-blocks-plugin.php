@@ -16,7 +16,6 @@
  *
  * @since       0.6.0
  * @version 	1.0.0
- * @todo 		Add constructor function for readability
  */
 class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 
@@ -51,9 +50,6 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
      * @version     1.0.0
      *
      * @return      object The body of the JSON response
-     * @todo 		check last_updated to determine whether to get again
-     * 				otherwise get it from wp options
-     * 				as currently it's hitting the API every time
      */
     public function get_api_data() {
 
@@ -122,7 +118,6 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 	*
 	* @since       	0.1.0
 	* @version     	1.0.0
-	* @todo 		Add error if google_maps_api_key not valid
 	*/
     public function get_api_thumbnail_url( $object, $linked_enlargement = false, $google_maps_api_key = null ) {
 
@@ -211,17 +206,15 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 	 *
 	 * @since       0.6.0
 	 * @version     1.0.0
-   	 * @todo add action to __construct without overriding the parent __construct
-	 * @todo Add rewrite rules in case another plugin flushes rules
-	 * 		add_action('init', [$this, 'set_rewrite_rules'] );
 	 */
 	public function set_rewrite_rules() {
 
 	    global $wp_rewrite;
 
+	    // Add rewrite rules in case another plugin flushes rules
+	  	// add_action('init', [$this, 'set_rewrite_rules'] );
 	    // ...
 	}
-
 }
 
 ?>

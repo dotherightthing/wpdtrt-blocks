@@ -35,6 +35,7 @@ $options = get_query_var( 'options' );
 extract( $options, EXTR_IF_EXISTS );
 
 $plugin_options = $plugin->get_plugin_options(); // plugin options
+$data = $plugin_options['data'];
 $google_maps_api_key = $plugin_options['google_maps_api_key']['value'];
 
 // Convert shortcode string attributes to integers
@@ -61,9 +62,6 @@ echo $before_title . $title . $after_title;
 <div class="wpdtrt-blocks-items frontend">
   <ul>
   <?php
-    // get the API data here, to avoid overloading the query_var
-    $data = $plugin->get_api_data();
-
     foreach( $data as $key => $val ):
 
       $data_object =      $data[$key];

@@ -105,7 +105,11 @@
 
   <p>The first <?php echo $max_length; ?> are displayed below:</p>
 
-  <div class="wpdtrt-plugin-ajax-response"></div>
+  <div class="wpdtrt-plugin-ajax-response">
+    <noscript>
+      Please enable JavaScript to see results.
+    </noscript>
+  </div>
 
   <?php
   /**

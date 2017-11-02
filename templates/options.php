@@ -24,6 +24,11 @@
     <?php esc_attr_e( 'DTRT Blocks', 'wpdtrt-blocks' ); ?>
     <span class="wpdtrt-blocks-version"><?php echo $this->get_version(); ?></span>
   </h1>
+  <noscript>
+    <div class="notice notice-warning">
+      <p>JavaScript is disabled. Please enable JavaScript to load demo data.</p>
+    </div>
+  </noscript>
 
   <?php
   /**
@@ -99,11 +104,7 @@
 
   <p>The first <?php echo $max_length; ?> are displayed below:</p>
 
-  <div class="wpdtrt-plugin-ajax-response" data-format="ui">
-    <noscript>
-      Please enable JavaScript to see results.
-    </noscript>
-  </div>
+  <div class="wpdtrt-plugin-ajax-response" data-format="ui"></div>
 
   <h2>
     <span><?php esc_attr_e( 'Sample data', 'wpdtrt-blocks'); ?></span>
@@ -111,11 +112,7 @@
 
   <p>The data used to generate the content above.</p>
 
-  <div class="wpdtrt-plugin-ajax-response wpdtrt-blocks-data" data-format="data">
-    <noscript>
-      Please enable JavaScript to see results.
-    </noscript>
-  </div>
+  <div class="wpdtrt-plugin-ajax-response wpdtrt-blocks-data" data-format="data"></div>
 
   <p class="wpdtrt-blocks-date">
     <em><?php _e('Data generated:', 'wpdtrt-blocks'); echo ' ' . $this->render_last_updated_humanised(); ?></em>

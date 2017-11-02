@@ -105,7 +105,9 @@
 
   <p>The first <?php echo $max_length; ?> are displayed below:</p>
 
-  <?php echo do_shortcode( '[wpdtrt_blocks_shortcode_1 number="' . $max_length . '" enlargement="1"]' ); ?>
+  <div class="wpdtrt-plugin-ajax-response">
+    <?php echo do_shortcode( '[wpdtrt_blocks_shortcode_1 number="' . $max_length . '" enlargement="1"]' ); ?>
+  </div>
 
   <?php
   /**

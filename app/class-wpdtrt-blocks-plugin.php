@@ -21,6 +21,28 @@
 class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 
     /**
+     * Hook the plugin in to WordPress
+     * This constructor automatically initialises the object's properties
+     * when it is instantiated,
+     * using new WPDTRT_Blocks_Plugin
+     *
+     * @param     array $settings Plugin options
+     *
+     * @version   1.1.0
+     * @since     1.0.0
+     *
+     * @see https://codex.wordpress.org/AJAX_in_Plugins
+     */
+    function __construct( $settings ) {
+
+    	// call the server side PHP function through admin-ajax.php.
+      	add_action('wp_ajax_refresh_api_data', [$this, 'refresh_api_data'] );
+
+		// Instantiate the parent object
+		parent::__construct( $settings );
+    }
+
+    /**
      * Request the data from the API
      *
      * @uses        ../../../../wp-includes/http.php
@@ -37,6 +59,7 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
     public function get_api_data() {
 
 		$plugin_options = $this->get_plugin_options();
+
 		$datatype = $plugin_options['datatype']['value']; // value must be set in options array
 
 		$endpoint = 'http://jsonplaceholder.typicode.com/' . $datatype;
@@ -56,8 +79,63 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 		 */
 		$data = json_decode( $response['body'] );
 
+		// Save the data and retrieval time
+		$plugin_options['data'] = $data;
+		$plugin_options['last_updated'] = time();
+		$this->set_plugin_options( $plugin_options );
+
 		return $data;
     }
+
+	/**
+	* Refresh the data from the API
+	*    The 'action' key's value, 'refresh_api_data',
+	*    matches the latter half of the action 'wp_ajax_refresh_api_data' in our AJAX handler.
+	*    This is because it is used to call the server side PHP function through admin-ajax.php.
+	*    If an action is not specified, admin-ajax.php will exit, and return 0 in the process.
+	*
+	* @see         https://codex.wordpress.org/AJAX_in_Plugins
+	* @todo        Create example
+	*
+	* @since       0.1.0
+	* @version     1.0.0
+	*
+	* @todo 		Refactor this, referencing AJAX_in_Plugins
+	*/
+	public function refresh_api_data() {
+
+		$plugin_options = $this->get_plugin_options();
+		$last_updated = $plugin_options['last_updated'];
+
+		// if the data does not exist, don't update it
+		if ( ! isset( $last_updated ) ) {
+			wp_die(); // only use in update function
+		}
+
+		$current_time = time();
+		$update_difference = $current_time - $last_updated;
+		$one_hour = (1 * 60 * 60);
+
+		$do_refresh = ( $update_difference > $one_hour );
+
+		// NOTE! uncomment for testing
+		// $do_refresh = true;
+
+		/**
+		* Let the Ajax know when the entire function has completed
+		*
+		* wp_die() vs die() vs exit()
+		* Most of the time you should be using wp_die() in your Ajax callback function.
+		* This provides better integration with WordPress and makes it easier to test your code.
+		*/
+		if ( $do_refresh ) {
+			print_r( $this->get_api_data() ); // the Ajax response
+			wp_die();
+		}
+		else {
+			wp_die();
+		}
+	}
 
 	/**
 	* Get the latitude and longitude of an API result item
@@ -172,57 +250,6 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 
     	return $url;
     }
-
-	/**
-	* Refresh the data from the API
-	*    The 'action' key's value, 'data_refresh',
-	*    matches the latter half of the action 'wp_ajax_data_refresh' in our AJAX handler.
-	*    This is because it is used to call the server side PHP function through admin-ajax.php.
-	*    If an action is not specified, admin-ajax.php will exit, and return 0 in the process.
-	*
-	* @see         https://codex.wordpress.org/AJAX_in_Plugins
-	* @todo        Create example
-	*
-	* @since       0.1.0
-	* @version     1.0.0
-	*
-	* @todo 		Refactor this, referencing AJAX_in_Plugins
-	*/
-	protected function TODO_get_api_data_again() {
-
-		$options = get_option( $this->get_prefix() );
-		$last_updated = $options['last_updated'];
-
-		if ( ! isset( $last_updated ) ) {
-			wp_die();
-		}
-
-		$current_time = time();
-		$update_difference = $current_time - $last_updated;
-		$one_hour = (1 * 60 * 60);
-
-		if ( $update_difference > $one_hour ) {
-
-			$datatype = $options['datatype'];
-
-			$options['data'] = $this->get_api_data( $datatype );
-
-			// inspecting the database will allow us to check
-			// whether the profile is being updated
-			$options['last_updated'] = time();
-
-			update_option( $this->get_prefix(), $options );
-		}
-
-		/**
-		* Let the Ajax know when the entire function has completed
-		*
-		* wp_die() vs die() vs exit()
-		* Most of the time you should be using wp_die() in your Ajax callback function.
-		* This provides better integration with WordPress and makes it easier to test your code.
-		*/
-		wp_die();
-	}
 
 	/**
 	 * Add custom rewrite rules

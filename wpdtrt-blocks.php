@@ -178,7 +178,8 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         'developer_prefix' => 'DTRT',
         'path' => WPDTRT_BLOCKS_PATH,
         'messages' => array(
-          'success' => __('settings successfully updated', 'wpdtrt-blocks')
+          'loading' => __('Loading latest data...', 'wpdtrt-blocks'),
+          'success' => __('settings successfully updated', 'wpdtrt-blocks'),
         ),
         'plugin_options' => $plugin_options,
         'instance_options' => $instance_options,

@@ -186,8 +186,8 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         'version' => WPDTRT_BLOCKS_VERSION,
         'demo_shortcode_params' => array(
           'id' => 'wpdtrt_blocks_shortcode_1',
-          'number' => '5',
-          'enlargement' => '0'
+          'number' => 5,
+          'enlargement' => 0
         )
       )
     );

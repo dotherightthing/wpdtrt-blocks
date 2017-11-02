@@ -11,7 +11,7 @@
  * @since     0.1.0
  * @version   1.0.0
  *
- * @todo Add fields dynamically
+ * @todo Fix GMT offset of last updated string
  */
 
   $plugin_options = $this->get_plugin_options();
@@ -110,7 +110,7 @@
 
   <p>The first <?php echo $max_length; ?> are displayed below:</p>
 
-  <div class="wpdtrt-plugin-ajax-response">
+  <div class="wpdtrt-plugin-ajax-response" data-format="ui">
     <noscript>
       Please enable JavaScript to see results.
     </noscript>
@@ -122,12 +122,14 @@
 
   <p>The data used to generate the content above.</p>
 
-  <div class="wpdtrt-blocks-data">
-    <?php echo $this->render_demo_shortcode_data(); ?>
+  <div class="wpdtrt-plugin-ajax-response wpdtrt-blocks-data" data-format="data">
+    <noscript>
+      Please enable JavaScript to see results.
+    </noscript>
   </div>
 
   <p class="wpdtrt-blocks-date">
-    <em><?php _e('Data generated:', 'wpdtrt-blocks'); echo ' ' . $last_updated; ?></em>
+    <em><?php _e('Data generated:', 'wpdtrt-blocks'); echo ' ' . $last_updated_str; ?></em>
   </p>
 
   <?php

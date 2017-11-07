@@ -45,6 +45,7 @@
   ?>
   <form name="data_form" method="post" action="">
 
+    <?php //hidden field is used by options_saved() ?>
     <input type="hidden" name="wpdtrt_blocks_form_submitted" value="Y" />
 
     <h2 class="title"><?php esc_attr_e('General Settings', 'wpdtrt-blocks'); ?></h2>
@@ -81,13 +82,7 @@
   </form>
 
   <?php
-    /**
-     * If the user has already chosen a content type,
-     * then $plugin_options['data'] will exist and contain the body of the resulting JSON.
-     * We display a sample of the data, so the user can verify that they have chosen the type
-     * which meets their needs.
-     */
-    if ( isset( $plugin_options['data'] ) ):
+    if ( $this->options_saved() === true ):
   ?>
 
   <h2>

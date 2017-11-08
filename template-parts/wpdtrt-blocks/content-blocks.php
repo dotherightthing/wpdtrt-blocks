@@ -34,8 +34,8 @@ $options = get_query_var( 'options' );
 // @link http://kb.network.dan/php/wordpress/extract/
 extract( $options, EXTR_IF_EXISTS );
 
+$plugin_data = $plugin->get_plugin_data(); // plugin options
 $plugin_options = $plugin->get_plugin_options(); // plugin options
-$data = $plugin_options['data'];
 $google_maps_api_key = $plugin_options['google_maps_api_key']['value'];
 
 // Convert shortcode string attributes to integers
@@ -62,9 +62,9 @@ echo $before_title . $title . $after_title;
 <div class="wpdtrt-blocks-items frontend">
   <ul>
   <?php
-    foreach( $data as $key => $val ):
+    foreach( $plugin_data as $key => $val ):
 
-      $data_object =      $data[$key];
+      $data_object =      $plugin_data[$key];
       $latlng =           $plugin->get_api_latlng( $data_object );
       $thetitle =         $plugin->get_api_title( $data_object );
       $enlargement_url =  $plugin->get_api_thumbnail_url( $data_object, true, $google_maps_api_key );

@@ -15,6 +15,9 @@
   $plugin_options = $this->get_plugin_options();
   $demo_shortcode_params = $this->demo_shortcode_params;
   $max_length = $demo_shortcode_params['number'];
+  $dataset_length = $this->get_plugin_data_length();
+  $form_submitted = ( $this->options_saved() === true );
+  $date_last_updated = $this->render_last_updated_humanised() ? $this->render_last_updated_humanised() : '';
 ?>
 
 <div class="wrap">
@@ -82,7 +85,7 @@
   </form>
 
   <?php
-    if ( $this->options_saved() === true ):
+    if ( $form_submitted ):
   ?>
 
   <h2>
@@ -95,7 +98,7 @@
     </code>
   </p>
 
-  <p>This data set contains <?php echo count( $plugin_options['data'] ); ?> items.</p>
+  <p>This data set contains <?php echo $dataset_length; ?> items.</p>
 
   <p>The first <?php echo $max_length; ?> are displayed below:</p>
 
@@ -110,7 +113,7 @@
   <div class="wpdtrt-plugin-ajax-response wpdtrt-blocks-data" data-format="data"></div>
 
   <p class="wpdtrt-blocks-date">
-    <em><?php _e('Data generated:', 'wpdtrt-blocks'); echo ' ' . $this->render_last_updated_humanised(); ?></em>
+    <em><?php _e('Data last updated:', 'wpdtrt-blocks'); echo ' ' . $date_last_updated; ?></em>
   </p>
 
   <?php

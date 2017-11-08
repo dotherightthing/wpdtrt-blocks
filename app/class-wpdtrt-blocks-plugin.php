@@ -41,7 +41,8 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
     }
 
     /**
-     * Request the data from the API
+     * Request the data from the API.
+     * This overrides the placeholder method in the parent class.
      *
      * @uses        ../../../../wp-includes/http.php
      * @see         https://developer.wordpress.org/reference/functions/wp_remote_get/

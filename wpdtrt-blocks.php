@@ -14,12 +14,6 @@ Domain Path:  /languages
 
 require_once plugin_dir_path( __FILE__ ) . "vendor/autoload.php";
 
-// TODO: these are also loaded in the plugin - which is correct?
-use DoTheRightThing\WPPlugin\Plugin;
-use DoTheRightThing\WPPlugin\TemplateLoader;
-use DoTheRightThing\WPPlugin\Shortcode;
-use DoTheRightThing\WPPlugin\Widget;
-
 /**
  * Constants
  * WordPress makes use of the following constants when determining the path to the content and plugin directories.

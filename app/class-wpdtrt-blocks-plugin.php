@@ -46,6 +46,7 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
      *
      * @uses        ../../../../wp-includes/http.php
      * @see         https://developer.wordpress.org/reference/functions/wp_remote_get/
+     * @see 		https://codex.wordpress.org/HTTP_API#Other_Arguments
      *
      * @since       0.1.0
      * @version     1.0.0
@@ -61,7 +62,8 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 		$endpoint = 'http://jsonplaceholder.typicode.com/' . $datatype;
 
 		$args = array(
-			'timeout' => 30 // seconds to wait for the request to complete
+			'timeout' => 30, // seconds to wait for the request to complete
+			'blocking' => true // false = nothing loads
 		);
 
 		$response = wp_remote_get(

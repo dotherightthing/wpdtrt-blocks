@@ -62,6 +62,8 @@ echo $before_title . $title . $after_title;
 <div class="wpdtrt-blocks-items frontend">
   <ul>
   <?php
+  if ( ! empty($plugin_data) ):
+
     foreach( $plugin_data as $key => $val ):
 
       $data_object =      $plugin_data[$key];
@@ -90,6 +92,7 @@ echo $before_title . $title . $after_title;
       endif;
 
     endforeach;
+  endif;
   ?>
   </ul>
 </div>

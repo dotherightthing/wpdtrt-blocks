@@ -85,7 +85,7 @@
   </form>
 
   <?php
-    if ( $form_submitted ):
+    if ( $form_submitted || ( $date_last_updated !== '' ) ):
   ?>
 
   <h2>

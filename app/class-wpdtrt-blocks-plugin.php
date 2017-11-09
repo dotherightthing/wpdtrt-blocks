@@ -76,9 +76,10 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 		$data = json_decode( $response['body'] );
 
 		// Save the data and retrieval time
-		$plugin_options['data'] = $data;
-		$plugin_options['last_updated'] = time();
-		$this->set_plugin_options( $plugin_options );
+		$this->set_plugin_data( $data );
+		$this->set_plugin_data_options( array(
+			'last_updated' => time()
+		) );
 
 		return $data;
     }

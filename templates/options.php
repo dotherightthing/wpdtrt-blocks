@@ -54,19 +54,6 @@
     </div>
   </noscript>
 
-  <?php
-  /**
-   * If the user has not chosen a content type yet.
-   * then $datatype will be set to the default of ""
-   * The user must make a selection so that we know which page to query,
-   * so we show the selection form.
-   *
-   * selected
-   * Compares two given values (for example, a saved option vs. one chosen in a form) and,
-   * if the values are the same, adds the selected attribute to the current option tag.
-   * @link https://codex.wordpress.org/Function_Reference/selected
-   */
-  ?>
   <form name="data_form" method="post" action="">
 
     <?php //hidden field is used by options_saved() ?>

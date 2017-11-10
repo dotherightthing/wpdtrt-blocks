@@ -98,9 +98,6 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
   require_once(WPDTRT_BLOCKS_PATH . 'app/class-wpdtrt-blocks-plugin.php');
   require_once(WPDTRT_BLOCKS_PATH . 'app/class-wpdtrt-blocks-widgets.php');
 
-  // functions
-  require_once(WPDTRT_BLOCKS_PATH . 'config/tgm-plugin-activation.php');
-
   /**
    * Plugin initialisaton
    *

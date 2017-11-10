@@ -98,6 +98,9 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
   require_once(WPDTRT_BLOCKS_PATH . 'app/class-wpdtrt-blocks-plugin.php');
   require_once(WPDTRT_BLOCKS_PATH . 'app/class-wpdtrt-blocks-widgets.php');
 
+  // log & trace helpers
+  $helpers = new DoTheRightThing\WPHelpers\Helpers;
+
   /**
    * Plugin initialisaton
    *
@@ -111,7 +114,6 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
    * @todo Add a constructor function to WPDTRT_Blocks_Plugin, to explain the options array
    */
   function wpdtrt_blocks_init() {
-
     // pass object reference between classes via global
     // because the object does not exist until the WordPress init action has fired
     global $wpdtrt_blocks_plugin;

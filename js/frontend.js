@@ -5,7 +5,6 @@
  *    PHP variables are provided in wpdtrt_blocks_config.
  *
  * @package     wpdtrt_blocks
- * @subpackage  wpdtrt_blocks/js
  * @since       0.1.0
  */
 

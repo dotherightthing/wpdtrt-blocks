@@ -1,6 +1,12 @@
-# DTRT Blocks
+# DTRT WP Blocks
 
 Demo plugin which uses [wpdtrt-plugin](https://github.com/dotherightthing/wpdtrt-plugin).
+
+## Setup
+
+```
+composer install
+```
 
 ## Usage
 

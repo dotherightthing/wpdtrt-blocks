@@ -122,24 +122,22 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
      * Admin settings
      */
     $plugin_options = array(
-      'google_maps_api_key' => array(
-        'type' => 'password',
-        'label' => esc_html__('The Google maps API key', 'wpdtrt-blocks'),
-        'size' => 10,
-        'value' => '',
-      ),
       'datatype' => array(
         'type' => 'select',
-        'label' => __('The Data type', 'wpdtrt-blocks'),
+        'label' => __('Data type', 'wpdtrt-blocks'),
         'options' => array(
           'photos' => array(
-            'text' => __('A Coloured blocks', 'wpdtrt-blocks')
+            'text' => __('Coloured blocks', 'wpdtrt-blocks')
           ),
           'users' => array(
-            'text' => __('B Maps', 'wpdtrt-blocks')
+            'text' => __('Maps', 'wpdtrt-blocks')
           ),
         ),
-        'value' => null
+      ),
+      'google_maps_api_key' => array(
+        'type' => 'password',
+        'label' => esc_html__('Google maps API key', 'wpdtrt-blocks'),
+        'size' => 10,
       )
     );
 
@@ -152,13 +150,11 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         'type' => 'number',
         'label' => esc_html__('Number of blocks to display', 'wpdtrt-blocks'),
         'size' => 4,
-        'value' => '1',
         'tip' => '1 - COUNT_DATA',
       ),
       'enlargement' => array(
         'type' => 'checkbox',
         'label' => esc_html__('Link to enlargement?', 'wpdtrt-blocks'),
-        'value' => '0',
       )
     );
 

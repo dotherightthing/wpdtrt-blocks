@@ -1,20 +1,12 @@
 /**
  * Styles for the admin front-end
  *
- * This file contains CSS.
- *
  * @package     wpdtrt_blocks
  * @since       1.0.0
  */
 
-@import "wpdtrt-blocks-variables";
-@import "wpdtrt-blocks-extends";
-
-.wpdtrt-blocks-version {
-	// copied from dashboard-widgets-suite plugin
-	color: #c7c7c7;
-  font-size: 90%;
-}
+@import "vendor/dotherightthing/wpdtrt-plugin/scss/_variables.scss";
+@import "vendor/dotherightthing/wpdtrt-plugin/scss/_extends.scss";
 
 .wpdtrt-blocks-items {
   @extend .clear;
@@ -48,16 +40,5 @@
       content: counter(blocks);
       padding: 8px;
     }
-  }
-}
-
-.wpdtrt-blocks-date {
-  font-size: .95em;
-}
-
-.widget {
-  .wpdtrt-blocks-tip {
-    display: block;
-    padding-top: 4px;
   }
 }

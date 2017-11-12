@@ -1,14 +1,12 @@
 /**
  * Styles for the public front-end
  *
- * This file contains CSS.
- *
  * @package     wpdtrt_blocks
  * @since       1.0.0
  */
 
-@import "wpdtrt-blocks-variables";
-@import "wpdtrt-blocks-extends";
+@import "vendor/dotherightthing/wpdtrt-plugin/scss/_variables.scss";
+@import "vendor/dotherightthing/wpdtrt-plugin/scss/_extends.scss";
 
 .wpdtrt-blocks-items {
   @extend .clear;

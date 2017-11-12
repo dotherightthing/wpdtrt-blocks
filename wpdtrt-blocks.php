@@ -95,8 +95,8 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
   require_once(WPDTRT_BLOCKS_PATH . 'vendor/dotherightthing/wpdtrt-plugin/index.php');
 
   // sub classes
-  require_once(WPDTRT_BLOCKS_PATH . 'app/class-wpdtrt-blocks-plugin.php');
-  require_once(WPDTRT_BLOCKS_PATH . 'app/class-wpdtrt-blocks-widgets.php');
+  require_once(WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-plugin.php');
+  require_once(WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-widgets.php');
 
   // log & trace helpers
   $helpers = new DoTheRightThing\WPHelpers\Helpers;

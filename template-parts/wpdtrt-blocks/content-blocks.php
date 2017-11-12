@@ -4,8 +4,8 @@
  *
  * @package     wpdtrt_blocks
  * @subpackage  wpdtrt_blocks/template-parts
- * @since     0.6.0
- * @version   1.0.0
+ * @since       1.0.0
+ * @version     1.0.0
  *
  * @todo Is this query var seen by other plugins which also use this class?
  */

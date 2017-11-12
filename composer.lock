@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dotherightthing/wpdtrt-plugin.git",
-                "reference": "89b0522a787406f99600a2dbd2c131c32867bffc"
+                "reference": "dc2c5e810e3d5f29605496f5ce4f355fc1f7f3d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dotherightthing/wpdtrt-plugin/zipball/89b0522a787406f99600a2dbd2c131c32867bffc",
-                "reference": "89b0522a787406f99600a2dbd2c131c32867bffc",
+                "url": "https://api.github.com/repos/dotherightthing/wpdtrt-plugin/zipball/dc2c5e810e3d5f29605496f5ce4f355fc1f7f3d9",
+                "reference": "dc2c5e810e3d5f29605496f5ce4f355fc1f7f3d9",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 "source": "https://github.com/dotherightthing/wpdtrt-plugin/tree/master",
                 "issues": "https://github.com/dotherightthing/wpdtrt-plugin/issues"
             },
-            "time": "2017-11-12 08:48:01"
+            "time": "2017-11-12 20:27:30"
         },
         {
             "name": "gamajo/template-loader",
@@ -2756,12 +2756,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "89143ce2b463515a75b5f5e9650e6ecfb2684158"
+                "reference": "3eeaec6a5d9a253925139cd19eda07d882635d87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/89143ce2b463515a75b5f5e9650e6ecfb2684158",
-                "reference": "89143ce2b463515a75b5f5e9650e6ecfb2684158",
+                "url": "https://api.github.com/repos/symfony/console/zipball/3eeaec6a5d9a253925139cd19eda07d882635d87",
+                "reference": "3eeaec6a5d9a253925139cd19eda07d882635d87",
                 "shasum": ""
             },
             "require": {
@@ -2809,7 +2809,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-11-07 14:08:47"
+            "time": "2017-11-12 16:36:54"
         },
         {
             "name": "symfony/debug",
@@ -3381,12 +3381,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "2610f2e1288f00e8a59f37b19d3b91e75e78865a"
+                "reference": "5322c9b4ca5fbff5917ecbf0544b46fb2fa66086"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/2610f2e1288f00e8a59f37b19d3b91e75e78865a",
-                "reference": "2610f2e1288f00e8a59f37b19d3b91e75e78865a",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/5322c9b4ca5fbff5917ecbf0544b46fb2fa66086",
+                "reference": "5322c9b4ca5fbff5917ecbf0544b46fb2fa66086",
                 "shasum": ""
             },
             "require": {
@@ -3438,7 +3438,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-11-07 21:50:11"
+            "time": "2017-11-12 18:47:15"
         },
         {
             "name": "zendframework/zend-cache",

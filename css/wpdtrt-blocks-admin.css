@@ -27,7 +27,7 @@
   word-wrap: normal !important;
 }
 
-.clear:after, .wpdtrt-blocks-items:after {
+.clear::after, .wpdtrt-blocks-items::after {
   content: "";
   display: block;
   clear: both;
@@ -43,13 +43,6 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.clear::after, .wpdtrt-blocks-items::after {
-  content: "";
-  display: table;
-  width: 100%;
-  clear: both;
 }
 
 .wpdtrt-blocks-version {

@@ -22,8 +22,7 @@
  * @link https://developer.wordpress.org/plugins/the-basics/uninstall-methods/#method-2-uninstall-php
  *
  * @package     wpdtrt_blocks
- * @since       0.1.0
- * @since 		0.6.0 Use correct option name
+ * @since       1.0.0
  * @version     1.0.0
  */
 

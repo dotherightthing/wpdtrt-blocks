@@ -1,7 +1,4 @@
-documentation
+.DS_Store
 logs
 node_modules
-tests
-composer.phar
-.DS_Store
-vendor/*
+vendor

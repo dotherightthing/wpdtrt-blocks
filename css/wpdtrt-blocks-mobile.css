@@ -27,7 +27,7 @@
   word-wrap: normal !important;
 }
 
-.clear:after {
+.clear::after {
   content: "";
   display: block;
   clear: both;
@@ -43,11 +43,4 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.clear::after {
-  content: "";
-  display: table;
-  width: 100%;
-  clear: both;
 }

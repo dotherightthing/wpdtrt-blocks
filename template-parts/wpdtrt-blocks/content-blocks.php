@@ -40,7 +40,7 @@ $plugin_options = $plugin->get_plugin_options();
 $google_maps_api_key = $plugin_options['google_maps_api_key'];
 
 if ( !isset( $google_maps_api_key['value'] ) ) {
-  $google_maps_api_key['value'] = $plugin->get_default_value( $google_maps_api_key['type'] );
+  $google_maps_api_key['value'] = $plugin->helper_get_default_value( $google_maps_api_key['type'] );
 }
 
 // Convert shortcode string attributes to integers

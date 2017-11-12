@@ -207,28 +207,6 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
     global $wpdtrt_blocks_plugin;
 
     /**
-     * Register a widget ready sidebar
-     *
-     * @example
-     * // sidebar-test.php
-     * if ( is_active_sidebar( 'sidebar-test' ) ) {
-     *    dynamic_sidebar( 'sidebar-test' );
-     * }
-     *
-     * // single.php
-     * <?php get_sidebar('test'); ?>
-     */
-    register_sidebar( array(
-      'name'          => esc_html__( 'Test Sidebar', 'wpdtrt-blocks' ),
-      'id'            => 'sidebar-test',
-      'description'   => esc_html__( 'Add widgets here to appear in the Test sidebar.', 'wpdtrt-blocks' ),
-      'before_widget' => '',
-      'after_widget'  => '',
-      'before_title'  => '<h2 class="widget-title">',
-      'after_title'   => '</h2>',
-    ));
-
-    /**
      * Register a widget
      * Note: widget_init fires before init, unless init has a priority of 0
      *
@@ -236,6 +214,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
      * @see         https://codex.wordpress.org/Function_Reference/register_widget#Example
      * @see         https://wp-mix.com/wordpress-widget_init-not-working/
      * @see         https://codex.wordpress.org/Plugin_API/Action_Reference
+     * @uses        https://github.com/dotherightthing/wpdtrt/tree/master/library/sidebars.php
      *
      * @since       0.1.0
      * @version     1.0.0

@@ -4,8 +4,7 @@
  * This file contains CSS.
  *
  * @package     wpdtrt_blocks
- * @subpackage  wpdtrt_blocks/css
- * @since       0.6.0
+ * @since       1.0.0
  */
 
 @import "wpdtrt-blocks-variables";
@@ -14,53 +13,51 @@
 .wpdtrt-blocks-version {
 	// copied from dashboard-widgets-suite plugin
 	color: #c7c7c7;
-    font-size: 90%;
+  font-size: 90%;
 }
 
 .wpdtrt-blocks-items {
-  counter-reset: blocks;
-}
+  @extend .clear;
 
-.wpdtrt-blocks-items::after {
-  content: "";
-  display: table;
-  width: 100%;
-  clear: both;
-}
+  ul,
+  li {
+    float: left;
+  }
 
-.wpdtrt-blocks-items ul,
-.wpdtrt-blocks-items li {
-  float: left;
-}
+  li {
+    position: relative;
+    margin: 0 8px 8px 0;
+    height: 150px;
+    width: 150px;
 
-.wpdtrt-blocks-items li {
-  position: relative;
-  margin: 0 8px 8px 0;
-  height: 150px;
-  width: 150px;
-}
+    img {
+      width: 150px;
+      height: 150px;
+    }
 
-.wpdtrt-blocks-items li::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #fff;
-  background-color: #000;
-  counter-increment: blocks;
-  content: counter(blocks);
-  padding: 8px;
-}
+    // numbering
+    counter-reset: blocks;
 
-.wpdtrt-blocks-items li img {
-  width: 150px;
-  height: 150px;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+      background-color: #000;
+      counter-increment: blocks;
+      content: counter(blocks);
+      padding: 8px;
+    }
+  }
 }
 
 .wpdtrt-blocks-date {
   font-size: .95em;
 }
 
-.widget .wpdtrt-blocks-tip {
-  display: block;
-  padding-top: 4px;
+.widget {
+  .wpdtrt-blocks-tip {
+    display: block;
+    padding-top: 4px;
+  }
 }

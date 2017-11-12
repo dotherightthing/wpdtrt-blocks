@@ -4,22 +4,19 @@
  * This file contains CSS.
  *
  * @package     wpdtrt_blocks
- * @subpackage  wpdtrt_blocks/css
- * @since       0.6.0
+ * @since       1.0.0
  */
 /**
  * Variables
  *
  * @package     wpdtrt_blocks
- * @subpackage  wpdtrt_blocks/css
- * @since       0.6.0
+ * @since       1.0.0
  */
 /**
  * SCSS @extends
  *
  * @package     wpdtrt_blocks
- * @subpackage  wpdtrt_blocks/css
- * @since       0.6.0
+ * @since       1.0.0
  */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
@@ -46,4 +43,11 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.clear::after {
+  content: "";
+  display: table;
+  width: 100%;
+  clear: both;
 }

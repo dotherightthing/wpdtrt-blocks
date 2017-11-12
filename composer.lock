@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dotherightthing/wpdtrt-plugin.git",
-                "reference": "834ca6a325ae9d79b108a478256fee5d530e1633"
+                "reference": "89b0522a787406f99600a2dbd2c131c32867bffc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dotherightthing/wpdtrt-plugin/zipball/834ca6a325ae9d79b108a478256fee5d530e1633",
-                "reference": "834ca6a325ae9d79b108a478256fee5d530e1633",
+                "url": "https://api.github.com/repos/dotherightthing/wpdtrt-plugin/zipball/89b0522a787406f99600a2dbd2c131c32867bffc",
+                "reference": "89b0522a787406f99600a2dbd2c131c32867bffc",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 "source": "https://github.com/dotherightthing/wpdtrt-plugin/tree/master",
                 "issues": "https://github.com/dotherightthing/wpdtrt-plugin/issues"
             },
-            "time": "2017-11-12 08:22:00"
+            "time": "2017-11-12 08:48:01"
         },
         {
             "name": "gamajo/template-loader",

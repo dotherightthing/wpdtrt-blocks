@@ -4,22 +4,19 @@
  * This file contains CSS.
  *
  * @package     wpdtrt_blocks
- * @subpackage  wpdtrt_blocks/css
- * @since       0.6.0
+ * @since       1.0.0
  */
 /**
  * Variables
  *
  * @package     wpdtrt_blocks
- * @subpackage  wpdtrt_blocks/css
- * @since       0.6.0
+ * @since       1.0.0
  */
 /**
  * SCSS @extends
  *
  * @package     wpdtrt_blocks
- * @subpackage  wpdtrt_blocks/css
- * @since       0.6.0
+ * @since       1.0.0
  */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
@@ -30,7 +27,7 @@
   word-wrap: normal !important;
 }
 
-.clear:after {
+.clear:after, .wpdtrt-blocks-items:after {
   content: "";
   display: block;
   clear: both;
@@ -48,8 +45,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.clear::after, .wpdtrt-blocks-items::after {
+  content: "";
+  display: table;
+  width: 100%;
+  clear: both;
+}
+
 .wpdtrt-blocks-items {
-  counter-reset: blocks;
   background-color: #f0f0f0;
   color: #333;
   font-weight: bold;
@@ -58,24 +61,6 @@
   padding: 0.5rem 0 0 0.5rem;
   margin-bottom: 8px;
   margin-bottom: 0.5rem;
-}
-
-.wpdtrt-blocks-items::before {
-  content: attr(data-number) " blocks";
-  display: block;
-  padding-bottom: 8px;
-  padding-bottom: 0.5rem;
-}
-
-.wpdtrt-blocks-items[data-number="1"]::before {
-  content: attr(data-number) " block";
-}
-
-.wpdtrt-blocks-items::after {
-  content: "";
-  display: table;
-  width: 100%;
-  clear: both;
 }
 
 .wpdtrt-blocks-items ul,
@@ -92,14 +77,9 @@
   width: 150px;
 }
 
-.widget .wpdtrt-blocks-items ul li {
-  padding: 0;
-  border: 0;
-}
-
-.widget .wpdtrt-blocks-items ul li + li {
-  margin-top: 0;
-  /* reset */
+.wpdtrt-blocks-items li img {
+  width: 150px;
+  height: 150px;
 }
 
 .wpdtrt-blocks-items li > a::before {
@@ -111,9 +91,4 @@
   content: "+";
   padding: 8px;
   padding: 0.5rem;
-}
-
-.wpdtrt-blocks-items li img {
-  width: 150px;
-  height: 150px;
 }

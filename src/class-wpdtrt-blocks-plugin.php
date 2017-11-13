@@ -3,8 +3,7 @@
  * Plugin sub class.
  *
  * @package     wpdtrt_blocks
- * @subpackage  wpdtrt_blocks/app
- * @since       0.6.0
+ * @since       1.0.0
  * @version 	1.0.0
  */
 
@@ -14,7 +13,7 @@
  * Extends the base class to inherit boilerplate functionality.
  * Adds application-specific methods.
  *
- * @since       0.6.0
+ * @since       1.0.0
  * @version 	1.0.0
  */
 class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
@@ -208,7 +207,7 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
 	 * @see https://www.addedbytes.com/articles/for-beginners/url-rewriting-for-beginners/
 	 * @see http://codex.wordpress.org/Rewrite_API
 	 *
-	 * @since       0.6.0
+	 * @since       1.0.0
 	 * @version     1.0.0
 	 */
 	public function set_rewrite_rules() {

@@ -1,9 +1,8 @@
 <?php
 /**
- * Displays data blocks
+ * Template to display blocks in shortcodes and widgets
  *
  * @package     wpdtrt_blocks
- * @subpackage  wpdtrt_blocks/template-parts
  * @since       1.0.0
  * @version     1.0.0
  *

@@ -3,7 +3,7 @@
 Plugin Name:  DTRT Blocks
 Plugin URI:   https://github.com/dotherightthing/wpdtrt-blocks
 Description:  Demo plugin using wpdtrt-plugin classes
-Version:      0.1.0
+Version:      1.0.0
 Author:       Dan Smith
 Author URI:   https://profiles.wordpress.org/dotherightthingnz
 License:      GPLv2 or later
@@ -127,7 +127,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         'label' => __('Data type', 'wpdtrt-blocks'),
         'options' => array(
           'photos' => array(
-            'text' => __('Coloured blocks', 'wpdtrt-blocks')
+            'text' => __('Swatches', 'wpdtrt-blocks')
           ),
           'users' => array(
             'text' => __('Maps', 'wpdtrt-blocks')
@@ -136,7 +136,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
       ),
       'google_maps_api_key' => array(
         'type' => 'password',
-        'label' => esc_html__('Google maps API key', 'wpdtrt-blocks'),
+        'label' => esc_html__('Google Maps API key', 'wpdtrt-blocks'),
         'size' => 10,
       )
     );

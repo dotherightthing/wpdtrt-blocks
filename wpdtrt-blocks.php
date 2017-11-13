@@ -99,7 +99,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
   require_once(WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-widgets.php');
 
   // log & trace helpers
-  $helpers = new DoTheRightThing\WPHelpers\Helpers;
+  $helpers = new DoTheRightThing\WPDebug\Debug;
 
   /**
    * Plugin initialisaton

@@ -45,10 +45,10 @@ if( ! defined( 'WPDTRT_BLOCKS_VERSION' ) ) {
  * @example $plugin_data = get_plugin_data( __FILE__ ); $plugin_version = $plugin_data['Version'];
  * @link https://wordpress.stackexchange.com/questions/18268/i-want-to-get-a-plugin-version-number-dynamically
  *
- * @since     0.1.0
+ * @since     1.0.0
  * @version   1.0.0
  */
-  define( 'WPDTRT_BLOCKS_VERSION', '0.1' );
+  define( 'WPDTRT_BLOCKS_VERSION', '1.0.0' );
 }
 
 if( ! defined( 'WPDTRT_BLOCKS_PATH' ) ) {
@@ -61,7 +61,7 @@ if( ! defined( 'WPDTRT_BLOCKS_PATH' ) ) {
  * @link https://developer.wordpress.org/reference/functions/plugin_dir_path/
  * @link https://developer.wordpress.org/plugins/the-basics/best-practices/#prefix-everything
  *
- * @since     0.1.0
+ * @since     1.0.0
  * @version   1.0.0
  */
   define( 'WPDTRT_BLOCKS_PATH', plugin_dir_path( __FILE__ ) );
@@ -77,7 +77,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
  * @link https://codex.wordpress.org/Function_Reference/plugin_dir_url
  * @link https://developer.wordpress.org/plugins/the-basics/best-practices/#prefix-everything
  *
- * @since     0.1.0
+ * @since     1.0.0
  * @version   1.0.0
  */
   define( 'WPDTRT_BLOCKS_URL', plugin_dir_url( __FILE__ ) );
@@ -86,7 +86,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
 /**
  * Include plugin logic
  *
- * @since     0.1.0
+ * @since     1.0.0
  * @version   1.0.0
  */
 
@@ -99,7 +99,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
   require_once(WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-widgets.php');
 
   // log & trace helpers
-  $helpers = new DoTheRightThing\WPDebug\Debug;
+  $debug = new DoTheRightThing\WPDebug\Debug;
 
   /**
    * Plugin initialisaton
@@ -120,6 +120,12 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
 
     /**
      * Admin settings
+     * For array syntax, please view the field documentation:
+     * @see https://github.com/dotherightthing/wpdtrt-plugin/blob/master/views/form-element-checkbox.php
+     * @see https://github.com/dotherightthing/wpdtrt-plugin/blob/master/views/form-element-number.php
+     * @see https://github.com/dotherightthing/wpdtrt-plugin/blob/master/views/form-element-password.php
+     * @see https://github.com/dotherightthing/wpdtrt-plugin/blob/master/views/form-element-select.php
+     * @see https://github.com/dotherightthing/wpdtrt-plugin/blob/master/views/form-element-text.php
      */
     $plugin_options = array(
       'datatype' => array(
@@ -143,7 +149,12 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
 
     /**
      * All options available to Widgets and Shortcodes
-     * @todo Widgets and Shortcodes choose which one they wish to use
+     * For array syntax, please view the field documentation:
+     * @see https://github.com/dotherightthing/wpdtrt-plugin/blob/master/views/form-element-checkbox.php
+     * @see https://github.com/dotherightthing/wpdtrt-plugin/blob/master/views/form-element-number.php
+     * @see https://github.com/dotherightthing/wpdtrt-plugin/blob/master/views/form-element-password.php
+     * @see https://github.com/dotherightthing/wpdtrt-plugin/blob/master/views/form-element-select.php
+     * @see https://github.com/dotherightthing/wpdtrt-plugin/blob/master/views/form-element-text.php
      */
     $instance_options = array(
       'number' => array(
@@ -170,6 +181,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
           'loading' => __('Loading latest data...', 'wpdtrt-blocks'),
           'success' => __('settings successfully updated', 'wpdtrt-blocks'),
           'insufficient_permissions' => __('Sorry, you do not have sufficient permissions to access this page.', 'wpdtrt-blocks'),
+          'noscript_warning' => __('JavaScript is disabled. Please enable JavaScript to load demo data.', 'wpdtrt-blocks'),
           'demo_sample_title' => __('Sample content', 'wpdtrt-blocks'),
           'demo_data_title' => __('Sample data', 'wpdtrt-blocks'),
           'demo_data_description' => __('The data used to generate the content above', 'wpdtrt-blocks'),
@@ -177,7 +189,6 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
           'demo_data_displayed_length' => __('The first # are displayed below', 'wpdtrt-blocks'),
           'demo_date_last_updated' => __('Data last updated', 'wpdtrt-blocks'),
           'demo_shortcode_title' => __('Shortcode', 'wpdtrt-blocks'),
-          'demo_noscript_warning' => __('JavaScript is disabled. Please enable JavaScript to load demo data.', 'wpdtrt-blocks'),
           'options_form_title' => __('General Settings', 'wpdtrt-blocks'),
           'options_form_description' => __('Please enter your preferences', 'wpdtrt-blocks'),
           'options_form_submit' => __('Save Changes', 'wpdtrt-blocks')
@@ -197,33 +208,24 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
   add_action( 'init', 'wpdtrt_blocks_init', 0 );
 
   /**
-   * Widget initialisaton
+   * Register a WordPress widget, passing in an instance of our custom widget class
+   * The plugin does not require registration, but widgets and shortcodes do.
+   * Note: widget_init fires before init, unless init has a priority of 0
    *
-   * Register a sidebar for the widget.
-   * Register a widget.
+   * @uses        ../../../../wp-includes/widgets.php
+   * @see         https://codex.wordpress.org/Function_Reference/register_widget#Example
+   * @see         https://wp-mix.com/wordpress-widget_init-not-working/
+   * @see         https://codex.wordpress.org/Plugin_API/Action_Reference
+   * @uses        https://github.com/dotherightthing/wpdtrt/tree/master/library/sidebars.php
+   *
+   * @since       0.1.0
+   * @version     0.1.0
+   * @todo        Add form field parameters to the options array
+   * @todo        Investigate the 'classname' option
    */
   function wpdtrt_blocks_widget_1_init() {
 
     global $wpdtrt_blocks_plugin;
-
-    /**
-     * Register a widget
-     * Note: widget_init fires before init, unless init has a priority of 0
-     *
-     * @uses        ../../../../wp-includes/widgets.php
-     * @see         https://codex.wordpress.org/Function_Reference/register_widget#Example
-     * @see         https://wp-mix.com/wordpress-widget_init-not-working/
-     * @see         https://codex.wordpress.org/Plugin_API/Action_Reference
-     * @uses        https://github.com/dotherightthing/wpdtrt/tree/master/library/sidebars.php
-     *
-     * @since       0.1.0
-     * @version     1.0.0
-     * @todo        Add form field parameters to the options array
-     * @todo        Investigate the 'classname' option
-     */
-    // we don't need to register the plugin
-    // but we do need to register widgets and shortcodes
-    // should we do that here or in the class files?
 
     $wpdtrt_blocks_widget_1 = new WPDTRT_Blocks_Widget_1(
       array(
@@ -236,19 +238,9 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
           'number',
           'enlargement'
         )
-        //'classname' => 'wpdtrt-blocks-widget',
       )
     );
 
-    // Missing argument 1 for Widget::__construct(),
-    // called in ~/wp-includes/class-wp-widget-factory.php on line 106
-    //register_widget( 'WPDTRT_Blocks_Widget_1' );
-
-    // 4.6.0 Updated the `$widget` parameter to also accept
-    // a WP_Widget instance object
-    // instead of simply a `WP_Widget` subclass name.
-
-    // TODO: can this be moved into the constructor?
     register_widget( $wpdtrt_blocks_widget_1 );
   }
 

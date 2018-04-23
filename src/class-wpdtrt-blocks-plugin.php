@@ -28,8 +28,6 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
      *
      * @version   1.1.0
      * @since     1.0.0
-     *
-     * @see https://codex.wordpress.org/AJAX_in_Plugins
      */
     function __construct( $settings ) {
 

@@ -1,16 +1,16 @@
 <?php
-/*
-Plugin Name:  DTRT Blocks
-Plugin URI:   https://github.com/dotherightthing/wpdtrt-blocks
-Description:  Demo plugin using wpdtrt-plugin classes
-Version:      1.0.0
-Author:       Dan Smith
-Author URI:   https://profiles.wordpress.org/dotherightthingnz
-License:      GPLv2 or later
-License URI:  http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:  wpdtrt-blocks
-Domain Path:  /languages
-*/
+/**
+ * Plugin Name:  DTRT Blocks
+ * Plugin URI:   https://github.com/dotherightthing/wpdtrt-blocks
+ * Description:  Demo plugin which uses wpdtrt-plugin.
+ * Version:      1.1.0
+ * Author:       Dan Smith
+ * Author URI:   https://profiles.wordpress.org/dotherightthingnz
+ * License:      GPLv2 or later
+ * License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:  wpdtrt-blocks
+ * Domain Path:  /languages
+ */
 
 require_once plugin_dir_path( __FILE__ ) . "vendor/autoload.php";
 
@@ -35,6 +35,14 @@ require_once plugin_dir_path( __FILE__ ) . "vendor/autoload.php";
  * @link https://codex.wordpress.org/Determining_Plugin_and_Content_Directories#Plugins
  */
 
+/**
+  * Determine the correct path to the autoloader
+  * @see https://github.com/dotherightthing/wpdtrt-plugin/issues/51
+  */
+if( ! defined( 'WPDTRT_PLUGIN_CHILD' ) ) {
+  define( 'WPDTRT_PLUGIN_CHILD', true );
+}
+
 if( ! defined( 'WPDTRT_BLOCKS_VERSION' ) ) {
 /**
  * Plugin version.
@@ -45,10 +53,10 @@ if( ! defined( 'WPDTRT_BLOCKS_VERSION' ) ) {
  * @example $plugin_data = get_plugin_data( __FILE__ ); $plugin_version = $plugin_data['Version'];
  * @link https://wordpress.stackexchange.com/questions/18268/i-want-to-get-a-plugin-version-number-dynamically
  *
- * @since     1.0.0
- * @version   1.0.0
+ * @version   0.0.1
+ * @since     0.7.6
  */
-  define( 'WPDTRT_BLOCKS_VERSION', '1.0.0' );
+  define( 'WPDTRT_BLOCKS_VERSION', '1.1.0' );
 }
 
 if( ! defined( 'WPDTRT_BLOCKS_PATH' ) ) {
@@ -61,8 +69,8 @@ if( ! defined( 'WPDTRT_BLOCKS_PATH' ) ) {
  * @link https://developer.wordpress.org/reference/functions/plugin_dir_path/
  * @link https://developer.wordpress.org/plugins/the-basics/best-practices/#prefix-everything
  *
- * @since     1.0.0
- * @version   1.0.0
+ * @version   0.0.1
+ * @since     0.7.6
  */
   define( 'WPDTRT_BLOCKS_PATH', plugin_dir_path( __FILE__ ) );
 }
@@ -77,8 +85,8 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
  * @link https://codex.wordpress.org/Function_Reference/plugin_dir_url
  * @link https://developer.wordpress.org/plugins/the-basics/best-practices/#prefix-everything
  *
- * @since     1.0.0
- * @version   1.0.0
+ * @version   0.0.1
+ * @since     0.7.6
  */
   define( 'WPDTRT_BLOCKS_URL', plugin_dir_url( __FILE__ ) );
 }
@@ -86,13 +94,16 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
 /**
  * Include plugin logic
  *
- * @since     1.0.0
- * @version   1.0.0
+ * @version   0.0.1
+ * @since     0.7.6
  */
 
   // base class
   // redundant, but includes the composer-generated autoload file if not already included
   require_once(WPDTRT_BLOCKS_PATH . 'vendor/dotherightthing/wpdtrt-plugin/index.php');
+
+  // classes without composer.json files are loaded via Bower
+  //require_once(WPDTRT_BLOCKS_PATH . 'vendor/name/file.php');
 
   // sub classes
   require_once(WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-plugin.php');
@@ -175,27 +186,32 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         'prefix' => 'wpdtrt_blocks',
         'slug' => 'wpdtrt-blocks',
         'menu_title' => __('Blocks', 'wpdtrt-blocks'),
-        'developer_prefix' => 'DTRT',
+        'developer_prefix' => '',
         'path' => WPDTRT_BLOCKS_PATH,
         'messages' => array(
           'loading' => __('Loading latest data...', 'wpdtrt-blocks'),
           'success' => __('settings successfully updated', 'wpdtrt-blocks'),
           'insufficient_permissions' => __('Sorry, you do not have sufficient permissions to access this page.', 'wpdtrt-blocks'),
-          'noscript_warning' => __('JavaScript is disabled. Please enable JavaScript to load demo data.', 'wpdtrt-blocks'),
-          'demo_sample_title' => __('Sample content', 'wpdtrt-blocks'),
-          'demo_data_title' => __('Sample data', 'wpdtrt-blocks'),
-          'demo_data_description' => __('The data used to generate the content above', 'wpdtrt-blocks'),
-          'demo_data_length' => __('This data set contains # items', 'wpdtrt-blocks'),
-          'demo_data_displayed_length' => __('The first # are displayed below', 'wpdtrt-blocks'),
-          'demo_date_last_updated' => __('Data last updated', 'wpdtrt-blocks'),
-          'demo_shortcode_title' => __('Shortcode', 'wpdtrt-blocks'),
           'options_form_title' => __('General Settings', 'wpdtrt-blocks'),
-          'options_form_description' => __('Please enter your preferences', 'wpdtrt-blocks'),
-          'options_form_submit' => __('Save Changes', 'wpdtrt-blocks')
+          'options_form_description' => __('Please enter your preferences.', 'wpdtrt-blocks'),
+          'no_options_form_description' => __('There aren\'t currently any options.', 'wpdtrt-blocks'),
+          'options_form_submit' => __('Save Changes', 'wpdtrt-blocks'),
+          'noscript_warning' => __('Please enable JavaScript', 'wpdtrt-blocks'),
         ),
         'plugin_options' => $plugin_options,
         'instance_options' => $instance_options,
         'version' => WPDTRT_BLOCKS_VERSION,
+        /*
+        'plugin_dependencies' => array(
+          array(
+            'name'          => 'Plugin Name',
+            'slug'          => 'plugin-name',
+            'source'        => 'https://github.com/user/library/archive/master.zip',
+            'required'      => true,
+            'is_callable'   => 'function_name'
+          )
+        ),
+        */
         'demo_shortcode_params' => array(
           'id' => 'wpdtrt_blocks_shortcode_1',
           'number' => 5,
@@ -218,8 +234,8 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
    * @see         https://codex.wordpress.org/Plugin_API/Action_Reference
    * @uses        https://github.com/dotherightthing/wpdtrt/tree/master/library/sidebars.php
    *
-   * @since       0.1.0
-   * @version     0.1.0
+   * @version     0.0.1
+   * @since       0.7.6
    * @todo        Add form field parameters to the options array
    * @todo        Investigate the 'classname' option
    */
@@ -230,10 +246,10 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
     $wpdtrt_blocks_widget_1 = new WPDTRT_Blocks_Widget_1(
       array(
         'name' => 'wpdtrt_blocks_widget_1',
-        'title' => __('DTRT Blocks Widget', 'wpdtrt-blocks'),
-        'description' => __('Display a selection of blocks', 'wpdtrt-blocks'),
+        'title' => __(' Blocks Widget', 'wpdtrt-blocks'),
+        'description' => __('Demo plugin which uses wpdtrt-plugin.', 'wpdtrt-blocks'),
         'plugin' => $wpdtrt_blocks_plugin,
-        'template' => 'blocks',
+        'template' => '',
         'selected_instance_options' => array(
           'number',
           'enlargement'
@@ -257,7 +273,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
       array(
         'name' => 'wpdtrt_blocks_shortcode_1',
         'plugin' => $wpdtrt_blocks_plugin,
-        'template' => 'blocks',
+        'template' => '',
         'selected_instance_options' => array(
           'number',
           'enlargement'
@@ -273,8 +289,8 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
    *
    * @see https://codex.wordpress.org/Function_Reference/register_activation_hook
    *
-   * @since     0.6.0
-   * @version   1.0.0
+   * @version   0.0.1
+   * @since     0.7.6
    */
   function wpdtrt_blocks_activate() {
     //wpdtrt_blocks_rewrite_rules();
@@ -290,8 +306,8 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
    *
    * @see https://codex.wordpress.org/Function_Reference/register_deactivation_hook
    *
-   * @since     0.6.0
-   * @version   1.0.0
+   * @version   0.0.1
+   * @since     0.7.6
    */
   function wpdtrt_blocks_deactivate() {
     flush_rewrite_rules();

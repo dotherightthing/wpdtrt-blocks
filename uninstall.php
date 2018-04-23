@@ -21,9 +21,9 @@
  * @link https://developer.wordpress.org/plugins/the-basics/best-practices/#file-organization
  * @link https://developer.wordpress.org/plugins/the-basics/uninstall-methods/#method-2-uninstall-php
  *
- * @package     wpdtrt_blocks
- * @since       1.0.0
- * @version     1.0.0
+ * @package     WPDTRT_Blocks
+ * @version     0.0.1
+ * @since       0.7.6
  */
 
 // if uninstall.php is not called by WordPress, die
@@ -35,9 +35,5 @@ delete_option('wpdtrt_blocks');
 
 // for site options in Multisite
 delete_site_option('wpdtrt_blocks');
-
-// drop a custom database table
-//global $wpdb;
-//$wpdb->query("DROP TABLE IF EXISTS {$wpdb->prefix}mytable");
 
 ?>

@@ -1,0 +1,36 @@
+//
+// Variables
+//
+// @package     WPDTRT_Blocks
+// @version 	0.0.1
+// @since       0.7.6
+//
+
+@import "vendor/dotherightthing/wpdtrt-plugin/node_modules/include-media/dist/_include-media";
+
+// -------------------------------------------------------------------
+// Breakpoints
+// -------------------------------------------------------------------
+
+// $breakpoints for include-media
+// Usage: @include media(">phone", "<=tablet") { ... }
+// Usage: @include media("<=1150px") { ... }
+// See https://include-media.com/
+
+$breakpoints: (
+    phone: 320px,
+    phone_large: 400px,
+    tablet_small: 550px,
+    tablet: 710px,
+    desktop: 910px
+);
+
+// -------------------------------------------------------------------
+// Colors
+// http://hex2rgba.devoth.com/
+// -------------------------------------------------------------------
+
+$wpdtrt-blocks-bg-color: rgba(240, 240, 240, 1);
+$wpdtrt-blocks-text-color: rgba(51, 51, 51, 1);
+$wpdtrt-blocks-icon-color: rgba(255, 255, 255, 1);
+$wpdtrt-blocks-icon-bg-color: rgba(0, 0, 0, 1);

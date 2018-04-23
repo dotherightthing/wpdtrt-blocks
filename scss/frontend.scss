@@ -1,18 +1,25 @@
-/**
- * Styles for the public front-end
- *
- * @package     wpdtrt_blocks
- * @since       1.0.0
- */
+//
+// Styles for the public front-end
+//
+// @package     WPDTRT_Blocks
+// @version 	0.0.1
+// @since       0.7.6
+//
 
 @import "vendor/dotherightthing/wpdtrt-plugin/scss/_variables.scss";
 @import "vendor/dotherightthing/wpdtrt-plugin/scss/_extends.scss";
+@import "variables";
+@import "extends";
+
+// -------------------------------------------------------------------
+// Styles
+// -------------------------------------------------------------------
 
 .wpdtrt-blocks-items {
-  @extend .clear;
+  @extend %wpdtrt-plugin--clear;
 
-  background-color: #f0f0f0;
-  color: #333;
+  background-color: $wpdtrt-blocks-bg-color;
+  color: $wpdtrt-blocks-text-color;
   font-weight: bold;
   font-size: .9em;
   padding: 8px 0 0 8px;
@@ -41,10 +48,14 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      color: #fff;
-      background-color: #000;
+      color: $wpdtrt-blocks-icon-color;
+      background-color: $wpdtrt-blocks-icon-bg-color;
       content: "+";
       padding: 8px;
     }
   }
 }
+
+// -------------------------------------------------------------------
+// Media Queries
+// -------------------------------------------------------------------

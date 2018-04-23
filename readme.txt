@@ -3,22 +3,22 @@
 Contributors: dotherightthingnz
 Donate link: http://dotherightthing.co.nz
 Tags: blocks, maps, swatches
-Requires at least: 4.8.2
-Tested up to: 4.8.2
+Requires at least: 4.9.5
+Tested up to: 4.9.5
 Requires PHP: 5.6.30
-Stable tag: 0.1.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Demo plugin using wpdtrt-plugin classes: https://github.com/dotherightthing/wpdtrt-plugin
+Demo plugin which uses wpdtrt-plugin.
 
 == Description ==
 
-Demo plugin using wpdtrt-plugin classes: https://github.com/dotherightthing/wpdtrt-plugin
+Demo plugin which uses wpdtrt-plugin.
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/wpdtrt-blocks` directory
+1. Upload the plugin files to the `/wp-content/plugins/wpdtrt-blocks` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Use the Settings->DTRT Blocks screen to configure the plugin
 
@@ -51,15 +51,18 @@ One or more widgets can be displayed within one or more sidebars:
 
 == Screenshots ==
 
-1. The caption for ./assets/screenshot-1.(png|jpg|jpeg|gif)
-2. The caption for ./assets/screenshot-2.(png|jpg|jpeg|gif)
+1. The caption for ./images/screenshot-1.(png|jpg|jpeg|gif)
+2. The caption for ./images/screenshot-2.(png|jpg|jpeg|gif)
 
 == Changelog ==
+
+= 1.1.0 =
+* Migrated to wpdtrt-plugin format
 
 = 1.0.0 =
 * Initial release
 
 == Upgrade Notice ==
 
-= 1.0.0 =
+= 0.0.1 =
 * Initial release

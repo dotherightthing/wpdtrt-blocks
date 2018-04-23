@@ -1,11 +1,10 @@
 /**
  * Scripts for the public front-end
  *
- * This file contains JavaScript.
- *    PHP variables are provided in wpdtrt_blocks_config.
+ * PHP variables are provided in wpdtrt_blocks_config.
  *
- * @package     wpdtrt_blocks
- * @since       1.0.0
+ * @version 	1.0.0
+ * @since       0.7.6
  */
 
 jQuery(document).ready(function($){

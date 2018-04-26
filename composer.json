@@ -1,7 +1,7 @@
 {
-	"name": "dotherightthing/wpdtrt-blocks",
-	"description": "Demo plugin which uses wpdtrt-plugin.",
-	"type": "library",
+    "name": "dotherightthing/wpdtrt-blocks",
+    "description": "Demo plugin which uses wpdtrt-plugin.",
+    "type": "library",
     "keywords": ["blocks", "maps", "swatches"],
     "license": "ISC",
     "authors": [

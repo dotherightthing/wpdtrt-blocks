@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "wpdtrt-blocks",
   "version": "1.1.0",
   "description": "Demo plugin which uses wpdtrt-plugin.",
@@ -11,6 +12,9 @@
   "devDependencies": {
     "gulp": "^3.9.1"
   },
+  "workspaces": [
+    "vendor/dotherightthing/wpdtrt-plugin/"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,8 +28,5 @@
   ],
   "license": "ISC",
   "homepage": "https://github.com/dotherightthing/wpdtrt-blocks",
-  "srcDir": "/Volumes/DanBackup/Websites/wpdtrt-blocks",
-  "dependencies": {
-    "bower": "^1.8.2"
-  }
+  "srcDir": "/Volumes/DanBackup/Websites/wpdtrt-blocks"
 }

@@ -202,6 +202,8 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
           'demo_shortcode_title' => __('Demo shortcode', 'wpdtrt-blocks'),
           'demo_data_description' => __('This demo was generated from the following data', 'wpdtrt-blocks'),
           'demo_date_last_updated' => __('Data last updated', 'wpdtrt-blocks'),
+          'demo_data_length' => __('results', 'wpdtrt-blocks'),
+          'demo_data_displayed_length' => __('results displayed', 'wpdtrt-blocks'),
         ),
         'plugin_options' => $plugin_options,
         'instance_options' => $instance_options,

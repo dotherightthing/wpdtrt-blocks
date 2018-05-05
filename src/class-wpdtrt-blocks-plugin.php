@@ -71,9 +71,10 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
     public function get_api_latlng( $object ) {
         $latlng = false;
         // user - map block
-        if ( isset( $object->{'address'} ) ):
-            $lat = $object->{'address'}->{'geo'}->{'lat'};
-            $lng = $object->{'address'}->{'geo'}->{'lng'};
+
+        if ( key_exists('address', $object) ):
+            $lat = $object['address']['geo']['lat'];
+            $lng =  $object['address']['geo']['lng'];
             $latlng = $lat . ',' . $lng;
         endif;
         return $latlng;
@@ -102,11 +103,11 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
             }
         }
         else {
-            if ( $linked_enlargement ) {
-                $thumbnail_url = $object->{'url'};
+            if ( $linked_enlargement && ( key_exists('url', $object) ) ) {
+                $thumbnail_url = $object['url'];
             }
-            else {
-                $thumbnail_url = $object->{'thumbnailUrl'};
+            else if ( key_exists('thumbnailUrl', $object) ) {
+                $thumbnail_url = $object['thumbnailUrl'];
             }
         }
         return $thumbnail_url;
@@ -122,8 +123,8 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\Plugin {
      */
     public function get_api_title( $object ) {
         $title = '';
-        if ( isset( $object->{'title'} ) ) {
-            $title = $object->{'title'};
+        if ( key_exists('title', $object) ) {
+            $title = $object['title'];
         }
         return $title;
     }

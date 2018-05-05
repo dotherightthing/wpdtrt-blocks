@@ -57,7 +57,14 @@ One or more widgets can be displayed within one or more sidebars:
 == Changelog ==
 
 = 1.1.0 =
-* Migrated to wpdtrt-plugin format
+* Query API data arrays rather than objects
+* Migrate Bower & NPM to Yarn
+* Update Node from 6.11.2 to 8.11.1
+* Add messages required by shortcode demo
+* Add SCSS partials for project-specific extends and variables
+* Change tag badge to release badge
+* Fix default .pot file
+* Migrate to wpdtrt-plugin format (1.3.6)
 
 = 1.0.0 =
 * Initial release

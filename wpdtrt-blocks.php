@@ -153,8 +153,9 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
       ),
       'google_maps_api_key' => array(
         'type' => 'password',
-        'label' => esc_html__('Google Maps API key', 'wpdtrt-blocks'),
-        'size' => 10,
+        'label' => __('Google Static Maps API Key', 'wpdtrt-blocks'),
+        'size' => 50,
+        'tip' => __('https://developers.google.com/maps/documentation/static-maps/ > GET A KEY', 'wpdtrt-blocks')
       )
     );
 

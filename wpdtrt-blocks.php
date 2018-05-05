@@ -222,7 +222,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         ),
         */
         'demo_shortcode_params' => array(
-          'id' => 'wpdtrt_blocks_shortcode_1',
+          'name' => 'wpdtrt_blocks_shortcode_1',
           'number' => 5,
           'enlargement' => 1
         )

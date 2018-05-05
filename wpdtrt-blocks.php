@@ -258,7 +258,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         'title' => __(' Blocks Widget', 'wpdtrt-blocks'),
         'description' => __('Demo plugin which uses wpdtrt-plugin.', 'wpdtrt-blocks'),
         'plugin' => $wpdtrt_blocks_plugin,
-        'template' => '',
+        'template' => 'blocks',
         'selected_instance_options' => array(
           'number',
           'enlargement'
@@ -282,7 +282,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
       array(
         'name' => 'wpdtrt_blocks_shortcode_1',
         'plugin' => $wpdtrt_blocks_plugin,
-        'template' => '',
+        'template' => 'blocks',
         'selected_instance_options' => array(
           'number',
           'enlargement'

@@ -186,6 +186,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
         'prefix' => 'wpdtrt_blocks',
         'slug' => 'wpdtrt-blocks',
         'menu_title' => __('Blocks', 'wpdtrt-blocks'),
+        'settings_title' => __('Settings', 'wpdtrt-blocks'),
         'developer_prefix' => '',
         'path' => WPDTRT_BLOCKS_PATH,
         'messages' => array(

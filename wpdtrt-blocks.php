@@ -3,7 +3,7 @@
  * Plugin Name:  DTRT Blocks
  * Plugin URI:   https://github.com/dotherightthing/wpdtrt-blocks
  * Description:  Demo plugin which uses wpdtrt-plugin.
- * Version:      1.1.0
+ * Version:      1.1.1
  * Author:       Dan Smith
  * Author URI:   https://profiles.wordpress.org/dotherightthingnz
  * License:      GPLv2 or later
@@ -56,7 +56,7 @@ if( ! defined( 'WPDTRT_BLOCKS_VERSION' ) ) {
  * @version   0.0.1
  * @since     0.7.6
  */
-  define( 'WPDTRT_BLOCKS_VERSION', '1.1.0' );
+  define( 'WPDTRT_BLOCKS_VERSION', '1.1.1' );
 }
 
 if( ! defined( 'WPDTRT_BLOCKS_PATH' ) ) {
@@ -278,7 +278,7 @@ if( ! defined( 'WPDTRT_BLOCKS_URL' ) ) {
 
     global $wpdtrt_blocks_plugin;
 
-    $wpdtrt_blocks_shortcode_1 = new DoTheRightThing\WPPlugin\Shortcode(
+    $wpdtrt_blocks_shortcode_1 = new DoTheRightThing\WPPlugin\r_1_4_6\Shortcode(
       array(
         'name' => 'wpdtrt_blocks_shortcode_1',
         'plugin' => $wpdtrt_blocks_plugin,

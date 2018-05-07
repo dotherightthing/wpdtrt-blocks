@@ -8,7 +8,7 @@
  *    gulp dist --gulpfile ./vendor/dotherightthing/wpdtrt-plugin/gulpfile.js --cwd ./
  *
  * @package     WPDTRT_Blocks
- * @version 	1.1.1
+ * @version 	1.1.2
  * @since       0.7.6
  */
  

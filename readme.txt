@@ -6,7 +6,7 @@ Tags: blocks, maps, swatches
 Requires at least: 4.9.5
 Tested up to: 4.9.5
 Requires PHP: 5.6.30
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,9 @@ One or more widgets can be displayed within one or more sidebars:
 2. The caption for ./images/screenshot-2.(png|jpg|jpeg|gif)
 
 == Changelog ==
+
+= 1.1.2 =
+* Fix path to autoloader when loaded as a test dependency
 
 = 1.1.1 =
 * Include release number in wpdtrt-plugin namespaces

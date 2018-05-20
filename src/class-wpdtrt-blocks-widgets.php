@@ -2,7 +2,7 @@
 /**
  * Widget classes.
  *
- * @package     wpdtrt_blocks
+ * @package     WPDTRT_Blocks
  * @version 	1.0.0
  * @since       0.7.6
  */

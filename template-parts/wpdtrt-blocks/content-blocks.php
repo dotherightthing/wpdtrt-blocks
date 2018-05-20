@@ -2,7 +2,7 @@
 /**
  * Template to display plugin output in shortcodes and widgets
  *
- * @package   DTRT Blocks
+ * @package   WPDTRT_Blocks
  * @version   0.0.1
  * @since     0.7.6
  */

@@ -2,7 +2,7 @@
 /**
  * Plugin sub class.
  *
- * @package     wpdtrt_blocks
+ * @package     WPDTRT_Blocks
  * @version 	0.0.1
  * @since       0.7.6
  */

@@ -117,7 +117,7 @@ class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPPlugin\r_1_4_14\Plugin {
      *
      * @param        object Single API data object
      * @return       string The title
-     * 
+     *
      * @since        0.1.0
      * @version      1.0.0
      */

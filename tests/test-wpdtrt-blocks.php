@@ -34,7 +34,6 @@ class wpdtrt_blocksTest extends WP_UnitTestCase {
      * @param string $expected Expected value
      * @param string $actual Actual value
      * @param string $error_message Message to show when strings don't match
-     *
      * @uses https://stackoverflow.com/a/26727310/6850747
      */
     protected function assertEqualHtml($expected, $actual, $error_message) {
@@ -65,7 +64,7 @@ class wpdtrt_blocksTest extends WP_UnitTestCase {
      * TearDown
      * Automatically called by PHPUnit after each test method is run
      *
-     * @see https://codesymphony.co/writing-wordpress-plugin-unit-tests/#object-factories     
+     * @see https://codesymphony.co/writing-wordpress-plugin-unit-tests/#object-factories
      */
     public function tearDown() {
 

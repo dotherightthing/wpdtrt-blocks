@@ -229,21 +229,21 @@ function wpdtrt_blocks_plugin_init() {
 	 *  UI Messages
 	 */
 	$ui_messages = array(
+		'demo_data_description'       => __( 'This demo was generated from the following data', 'wpdtrt-blocks' ),
+		'demo_data_displayed_length'  => __( 'results displayed', 'wpdtrt-blocks' ),
+		'demo_data_length'            => __( 'results', 'wpdtrt-blocks' ),
+		'demo_data_title'             => __( 'Demo data', 'wpdtrt-blocks' ),
+		'demo_date_last_updated'      => __( 'Data last updated', 'wpdtrt-blocks' ),
+		'demo_sample_title'           => __( 'Demo sample', 'wpdtrt-blocks' ),
+		'demo_shortcode_title'        => __( 'Demo shortcode', 'wpdtrt-blocks' ),
+		'insufficient_permissions'    => __( 'Sorry, you do not have sufficient permissions to access this page.', 'wpdtrt-blocks' ),
+		'no_options_form_description' => __( 'There aren\'t currently any options.', 'wpdtrt-blocks' ),
+		'noscript_warning'            => __( 'Please enable JavaScript', 'wpdtrt-blocks' ),
+		'options_form_description'    => __( 'Please enter your preferences.', 'wpdtrt-blocks' ),
+		'options_form_submit'         => __( 'Save Changes', 'wpdtrt-blocks' ),
+		'options_form_title'          => __( 'General Settings', 'wpdtrt-blocks' ),
 		'loading'                     => __( 'Loading latest data...', 'wpdtrt-blocks' ),
 		'success'                     => __( 'settings successfully updated', 'wpdtrt-blocks' ),
-		'insufficient_permissions'    => __( 'Sorry, you do not have sufficient permissions to access this page.', 'wpdtrt-blocks' ),
-		'options_form_title'          => __( 'General Settings', 'wpdtrt-blocks' ),
-		'options_form_description'    => __( 'Please enter your preferences.', 'wpdtrt-blocks' ),
-		'no_options_form_description' => __( 'There aren\'t currently any options.', 'wpdtrt-blocks' ),
-		'options_form_submit'         => __( 'Save Changes', 'wpdtrt-blocks' ),
-		'noscript_warning'            => __( 'Please enable JavaScript', 'wpdtrt-blocks' ),
-		'demo_sample_title'           => __( 'Demo sample', 'wpdtrt-blocks' ),
-		'demo_data_title'             => __( 'Demo data', 'wpdtrt-blocks' ),
-		'demo_shortcode_title'        => __( 'Demo shortcode', 'wpdtrt-blocks' ),
-		'demo_data_description'       => __( 'This demo was generated from the following data', 'wpdtrt-blocks' ),
-		'demo_date_last_updated'      => __( 'Data last updated', 'wpdtrt-blocks' ),
-		'demo_data_length'            => __( 'results', 'wpdtrt-blocks' ),
-		'demo_data_displayed_length'  => __( 'results displayed', 'wpdtrt-blocks' ),
 	);
 
 	/**

@@ -100,9 +100,9 @@ require_once $project_root_path . 'vendor/autoload.php';
 // sub classes, not loaded via PSR-4.
 // comment out the ones you don't need, edit the ones you do.
 require_once WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-plugin.php';
-require_once WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-rewrite.php';
+//require_once WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-rewrite.php';
 require_once WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-shortcode.php';
-require_once WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-taxonomy.php';
+//require_once WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-taxonomy.php';
 require_once WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-widget.php';
 
 // log & trace helpers.
@@ -112,9 +112,11 @@ $debug = new DoTheRightThing\WPDebug\Debug;
 /**
  * ===== WordPress Integration =====
  *
+ * Comment out the actions you don't need.
+ *
  * Notes:
  *  Default priority is 10. A higher priority runs later.
- *  register_activation_hook() is run before any of the provided hooks
+ *  register_activation_hook() is run before any of the provided hooks.
  *
  * @see https://developer.wordpress.org/plugins/hooks/actions/#priority
  * @see https://codex.wordpress.org/Function_Reference/register_activation_hook.
@@ -123,7 +125,7 @@ register_activation_hook( dirname( __FILE__ ), 'wpdtrt_blocks_helper_activate' )
 
 add_action( 'init', 'wpdtrt_blocks_plugin_init', 0 );
 add_action( 'init', 'wpdtrt_blocks_shortcode_init', 100 );
-add_action( 'init', 'wpdtrt_blocks_taxonomy_init', 100 );
+//add_action( 'init', 'wpdtrt_blocks_taxonomy_init', 100 );
 add_action( 'widgets_init', 'wpdtrt_blocks_widget_init', 10 );
 
 register_deactivation_hook( dirname( __FILE__ ), 'wpdtrt_blocks_helper_deactivate' );

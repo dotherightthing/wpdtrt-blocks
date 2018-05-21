@@ -14,7 +14,7 @@
  * @since   1.0.0
  * @version 1.0.0
  */
-class WPDTRT_Blocks_Widget extends DoTheRightThing\WPDTRT_Plugin\r_1_4_16\Widget {
+class WPDTRT_Blocks_Widget extends DoTheRightThing\WPDTRT_Plugin\r_1_4_21\Widget {
 
 	/**
 	 * Supplement widget initialisation.

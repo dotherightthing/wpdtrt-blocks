@@ -14,7 +14,7 @@
  * @since   1.0.0
  * @version 1.0.0
  */
-class WPDTRT_Blocks_Shortcode extends DoTheRightThing\WPDTRT_Plugin\r_1_4_16\Shortcode {
+class WPDTRT_Blocks_Shortcode extends DoTheRightThing\WPDTRT_Plugin\r_1_4_21\Shortcode {
 
 	/**
 	 * Supplement shortcode initialisation.

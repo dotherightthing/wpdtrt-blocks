@@ -61,16 +61,16 @@
         },
         {
             "name": "dotherightthing/wpdtrt-plugin",
-            "version": "1.4.14",
+            "version": "1.4.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dotherightthing/wpdtrt-plugin.git",
-                "reference": "0136da826f7350726cd11d4403d426eae6aadfa7"
+                "reference": "0b92787e2f3a89a69196f842cb4acd3172d2af62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dotherightthing/wpdtrt-plugin/zipball/0136da826f7350726cd11d4403d426eae6aadfa7",
-                "reference": "0136da826f7350726cd11d4403d426eae6aadfa7",
+                "url": "https://api.github.com/repos/dotherightthing/wpdtrt-plugin/zipball/0b92787e2f3a89a69196f842cb4acd3172d2af62",
+                "reference": "0b92787e2f3a89a69196f842cb4acd3172d2af62",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -98,7 +98,7 @@
             ],
             "autoload": {
                 "psr-4": {
-                    "DoTheRightThing\\WPPlugin\\r_1_4_14\\": "src"
+                    "DoTheRightThing\\WPDTRT_Plugin\\r_1_4_21\\": "src"
                 }
             },
             "notification-url": "https://repo.packagist.com/dotherightthing/downloads/",
@@ -121,9 +121,9 @@
             "support": {
                 "email": "support@dotherightthing.co.nz",
                 "issues": "https://github.com/dotherightthing/wpdtrt-tourdates/issues",
-                "source": "https://github.com/dotherightthing/wpdtrt-plugin/tree/1.4.14"
+                "source": "https://github.com/dotherightthing/wpdtrt-plugin/tree/1.4.21"
             },
-            "time": "2018-05-10T12:17:41+00:00"
+            "time": "2018-05-21T07:01:26+00:00"
         },
         {
             "name": "gamajo/template-loader",

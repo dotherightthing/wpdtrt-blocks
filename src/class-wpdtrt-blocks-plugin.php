@@ -12,7 +12,7 @@
  *
  * @since   1.0.0
  */
-class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPDTRT_Plugin\r_1_4_16\Plugin {
+class WPDTRT_Blocks_Plugin extends DoTheRightThing\WPDTRT_Plugin\r_1_4_21\Plugin {
 
 	/**
 	 * Supplement plugin initialisation.

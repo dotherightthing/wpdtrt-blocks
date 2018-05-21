@@ -177,7 +177,7 @@ function wpdtrt_blocks_plugin_init() {
 	/**
 	 * Global options
 	 *
-	 * @see https://github.com/dotherightthing/wpdtrt-plugin/wiki/Options:-Adding-global-options
+	 * @see https://github.com/dotherightthing/wpdtrt-plugin/wiki/Options:-Adding-global-options Options: Adding global options
 	 */
 	$plugin_options = array(
 		'datatype'            => array(
@@ -203,8 +203,7 @@ function wpdtrt_blocks_plugin_init() {
 	/**
 	 * Shortcode or Widget options
 	 *
-	 * @see https://github.com/dotherightthing/wpdtrt-plugin/wiki/Options:-Adding-shortcode-or-widget-options
-	 * @see https://github.com/dotherightthing/wpdtrt-plugin/wiki/Options:-Adding-WordPress-plugin-dependencies
+	 * @see https://github.com/dotherightthing/wpdtrt-plugin/wiki/Options:-Adding-shortcode-or-widget-options Options: Adding shortcode or widget options
 	 */
 	$instance_options = array(
 		'number'      => array(
@@ -220,44 +219,62 @@ function wpdtrt_blocks_plugin_init() {
 	);
 
 	/**
-	 * Plugin configuration
+	 * Plugin dependencies
 	 *
-	 * @see https://github.com/dotherightthing/wpdtrt-plugin/wiki/Options:-Adding-WordPress-plugin-dependencies
+	 * @see https://github.com/dotherightthing/wpdtrt-plugin/wiki/Options:-Adding-WordPress-plugin-dependencies Options: Adding WordPress plugin dependencies
+	 */
+	$plugin_dependencies = array();
+
+	/**
+	 *  UI Messages
+	 */
+	$ui_messages = array(
+		'loading'                     => __( 'Loading latest data...', 'wpdtrt-blocks' ),
+		'success'                     => __( 'settings successfully updated', 'wpdtrt-blocks' ),
+		'insufficient_permissions'    => __( 'Sorry, you do not have sufficient permissions to access this page.', 'wpdtrt-blocks' ),
+		'options_form_title'          => __( 'General Settings', 'wpdtrt-blocks' ),
+		'options_form_description'    => __( 'Please enter your preferences.', 'wpdtrt-blocks' ),
+		'no_options_form_description' => __( 'There aren\'t currently any options.', 'wpdtrt-blocks' ),
+		'options_form_submit'         => __( 'Save Changes', 'wpdtrt-blocks' ),
+		'noscript_warning'            => __( 'Please enable JavaScript', 'wpdtrt-blocks' ),
+		'demo_sample_title'           => __( 'Demo sample', 'wpdtrt-blocks' ),
+		'demo_data_title'             => __( 'Demo data', 'wpdtrt-blocks' ),
+		'demo_shortcode_title'        => __( 'Demo shortcode', 'wpdtrt-blocks' ),
+		'demo_data_description'       => __( 'This demo was generated from the following data', 'wpdtrt-blocks' ),
+		'demo_date_last_updated'      => __( 'Data last updated', 'wpdtrt-blocks' ),
+		'demo_data_length'            => __( 'results', 'wpdtrt-blocks' ),
+		'demo_data_displayed_length'  => __( 'results displayed', 'wpdtrt-blocks' ),
+	);
+
+	/**
+	 * Demo shortcode
+	 *
+	 * @see https://github.com/dotherightthing/wpdtrt-plugin/wiki/Settings-page:-Adding-a-demo-shortcode Settings page: Adding a demo shortcode
+	 */
+	$demo_shortcode_params = array(
+		'name'        => 'wpdtrt_blocks_shortcode',
+		'number'      => 5,
+		'enlargement' => 1,
+	);
+
+	/**
+	 * Plugin configuration
 	 */
 	$wpdtrt_blocks_plugin = new WPDTRT_Blocks_Plugin(
 		array(
+			'path'                  => WPDTRT_BLOCKS_PATH,
 			'url'                   => WPDTRT_BLOCKS_URL,
+			'version'               => WPDTRT_BLOCKS_VERSION,
 			'prefix'                => 'wpdtrt_blocks',
 			'slug'                  => 'wpdtrt-blocks',
 			'menu_title'            => __( 'Blocks', 'wpdtrt-blocks' ),
 			'settings_title'        => __( 'Settings', 'wpdtrt-blocks' ),
 			'developer_prefix'      => 'DTRT',
-			'path'                  => WPDTRT_BLOCKS_PATH,
-			'messages'              => array(
-				'loading'                     => __( 'Loading latest data...', 'wpdtrt-blocks' ),
-				'success'                     => __( 'settings successfully updated', 'wpdtrt-blocks' ),
-				'insufficient_permissions'    => __( 'Sorry, you do not have sufficient permissions to access this page.', 'wpdtrt-blocks' ),
-				'options_form_title'          => __( 'General Settings', 'wpdtrt-blocks' ),
-				'options_form_description'    => __( 'Please enter your preferences.', 'wpdtrt-blocks' ),
-				'no_options_form_description' => __( 'There aren\'t currently any options.', 'wpdtrt-blocks' ),
-				'options_form_submit'         => __( 'Save Changes', 'wpdtrt-blocks' ),
-				'noscript_warning'            => __( 'Please enable JavaScript', 'wpdtrt-blocks' ),
-				'demo_sample_title'           => __( 'Demo sample', 'wpdtrt-blocks' ),
-				'demo_data_title'             => __( 'Demo data', 'wpdtrt-blocks' ),
-				'demo_shortcode_title'        => __( 'Demo shortcode', 'wpdtrt-blocks' ),
-				'demo_data_description'       => __( 'This demo was generated from the following data', 'wpdtrt-blocks' ),
-				'demo_date_last_updated'      => __( 'Data last updated', 'wpdtrt-blocks' ),
-				'demo_data_length'            => __( 'results', 'wpdtrt-blocks' ),
-				'demo_data_displayed_length'  => __( 'results displayed', 'wpdtrt-blocks' ),
-			),
+			'messages'              => $ui_messages,
 			'plugin_options'        => $plugin_options,
 			'instance_options'      => $instance_options,
-			'version'               => WPDTRT_BLOCKS_VERSION,
-			'demo_shortcode_params' => array(
-				'name'        => 'wpdtrt_blocks_shortcode',
-				'number'      => 5,
-				'enlargement' => 1,
-			),
+			'plugin_dependencies'   => $plugin_dependencies,
+			'demo_shortcode_params' => $demo_shortcode_params,
 		)
 	);
 }

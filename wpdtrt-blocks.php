@@ -3,7 +3,7 @@
  * Plugin Name:  DTRT Blocks
  * Plugin URI:   https://github.com/dotherightthing/wpdtrt-blocks
  * Description:  Demo plugin which uses wpdtrt-plugin-boilerplate.
- * Version:      1.1.5
+ * Version:      1.1.6
  * Author:       Dan Smith
  * Author URI:   https://profiles.wordpress.org/dotherightthingnz
  * License:      GPLv2 or later
@@ -43,7 +43,7 @@ if ( ! defined( 'WPDTRT_BLOCKS_VERSION' ) ) {
 	 * @see $plugin_data = get_plugin_data( __FILE__ ); $plugin_version = $plugin_data['Version'];
 	 * @see https://wordpress.stackexchange.com/questions/18268/i-want-to-get-a-plugin-version-number-dynamically
 	 */
-	define( 'WPDTRT_BLOCKS_VERSION', '1.1.5' );
+	define( 'WPDTRT_BLOCKS_VERSION', '1.1.6' );
 }
 
 if ( ! defined( 'WPDTRT_BLOCKS_PATH' ) ) {

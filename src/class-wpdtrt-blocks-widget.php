@@ -3,7 +3,7 @@
  * Widget sub class.
  *
  * @package WPDTRT_Blocks
- * @since   1.0.0
+ * @since   0.7.17 DTRT WordPress Plugin Boilerplate Generator
  * @version 1.0.0
  */
 
@@ -14,7 +14,7 @@
  * @since   1.0.0
  * @version 1.0.0
  */
-class WPDTRT_Blocks_Widget extends DoTheRightThing\WPDTRT_Plugin\r_1_4_21\Widget {
+class WPDTRT_Blocks_Widget extends DoTheRightThing\WPDTRT_Plugin_Boilerplate\r_1_4_21\Widget {
 
 	/**
 	 * Supplement widget initialisation.

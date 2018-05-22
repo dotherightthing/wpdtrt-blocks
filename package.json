@@ -2,7 +2,7 @@
   "private": true,
   "name": "wpdtrt-blocks",
   "version": "1.1.4",
-  "description": "Demo plugin which uses wpdtrt-plugin.",
+  "description": "Demo plugin which uses wpdtrt-plugin-boilerplate.",
   "main": "wpdtrt-blocks.php",
   "person": {
     "name": "Dan Smith",
@@ -13,7 +13,7 @@
     "gulp": "^3.9.1"
   },
   "workspaces": [
-    "vendor/dotherightthing/wpdtrt-plugin/"
+    "vendor/dotherightthing/wpdtrt-plugin-boilerplate/"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

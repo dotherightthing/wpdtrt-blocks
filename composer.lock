@@ -60,17 +60,17 @@
             "time": "2018-03-22T09:48:20+00:00"
         },
         {
-            "name": "dotherightthing/wpdtrt-plugin",
-            "version": "1.4.21",
+            "name": "dotherightthing/wpdtrt-plugin-boilerplate",
+            "version": "1.4.22",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dotherightthing/wpdtrt-plugin.git",
-                "reference": "0b92787e2f3a89a69196f842cb4acd3172d2af62"
+                "url": "https://github.com/dotherightthing/wpdtrt-plugin-boilerplate.git",
+                "reference": "b17bb71ebab272c258c854aa5295ddf72b421a79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dotherightthing/wpdtrt-plugin/zipball/0b92787e2f3a89a69196f842cb4acd3172d2af62",
-                "reference": "0b92787e2f3a89a69196f842cb4acd3172d2af62",
+                "url": "https://api.github.com/repos/dotherightthing/wpdtrt-plugin-boilerplate/zipball/b17bb71ebab272c258c854aa5295ddf72b421a79",
+                "reference": "b17bb71ebab272c258c854aa5295ddf72b421a79",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -98,7 +98,7 @@
             ],
             "autoload": {
                 "psr-4": {
-                    "DoTheRightThing\\WPDTRT_Plugin\\r_1_4_21\\": "src"
+                    "DoTheRightThing\\WPDTRT_Plugin_Boilerplate\\r_1_4_22\\": "src"
                 }
             },
             "notification-url": "https://repo.packagist.com/dotherightthing/downloads/",
@@ -113,7 +113,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Base classes for a plugin, plugin shortcode, and plugin widget.",
+            "description": "Boilerplate for WordPress plugin development.",
             "keywords": [
                 "boilerplate",
                 "framework"
@@ -121,9 +121,9 @@
             "support": {
                 "email": "support@dotherightthing.co.nz",
                 "issues": "https://github.com/dotherightthing/wpdtrt-tourdates/issues",
-                "source": "https://github.com/dotherightthing/wpdtrt-plugin/tree/1.4.21"
+                "source": "https://github.com/dotherightthing/wpdtrt-plugin-boilerplate/tree/1.4.22"
             },
-            "time": "2018-05-21T07:01:26+00:00"
+            "time": "2018-05-21T23:43:01+00:00"
         },
         {
             "name": "gamajo/template-loader",

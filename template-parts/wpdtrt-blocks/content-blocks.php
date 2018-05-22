@@ -4,7 +4,7 @@
  *
  * @package   WPDTRT_Blocks
  * @version   0.0.1
- * @since     0.7.6
+ * @since     0.7.6 DTRT WordPress Plugin Boilerplate Generator
  */
 
 // Predeclare variables
@@ -56,7 +56,7 @@ $count      = 0;
 $has_enlargement = filter_var( $enlargement, FILTER_VALIDATE_BOOLEAN );
 
 // WordPress widget options (not output with shortcode)
-// TODO: how does WordPress handle this common scenario?
+// TODO: how does WordPress handle (validation of) this common scenario?
 echo $before_widget;
 echo $before_title . $title . $after_title;
 ?>

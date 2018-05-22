@@ -6,8 +6,8 @@
 // @since       0.7.6
 //
 
-@import "vendor/dotherightthing/wpdtrt-plugin/scss/_variables.scss";
-@import "vendor/dotherightthing/wpdtrt-plugin/scss/_extends.scss";
+@import "vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/_variables.scss";
+@import "vendor/dotherightthing/wpdtrt-plugin-boilerplate/scss/_extends.scss";
 @import "variables";
 @import "extends";
 
@@ -16,7 +16,7 @@
 // -------------------------------------------------------------------
 
 .wpdtrt-blocks-items {
-  @extend %wpdtrt-plugin--clear;
+  @extend %wpdtrt-plugin-boilerplate--clear;
 
   background-color: $wpdtrt-blocks-bg-color;
   color: $wpdtrt-blocks-text-color;

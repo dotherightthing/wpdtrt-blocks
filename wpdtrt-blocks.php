@@ -290,7 +290,9 @@ function wpdtrt_blocks_rewrite_init() {
 
 	global $wpdtrt_blocks_plugin;
 
-	$wpdtrt_blocks_rewrite = new WPDTRT_Blocks_Rewrite();
+	$wpdtrt_blocks_rewrite = new WPDTRT_Blocks_Rewrite(
+		array()
+	);
 }
 
 /**
@@ -330,7 +332,9 @@ function wpdtrt_blocks_taxonomy_init() {
 
 	global $wpdtrt_blocks_plugin;
 
-	$wpdtrt_blocks_taxonomy = new WPDTRT_Blocks_Taxonomy();
+	$wpdtrt_blocks_taxonomy = new WPDTRT_Blocks_Taxonomy(
+		array()
+	);
 
 	// return a reference for unit testing.
 	return $wpdtrt_blocks_taxonomy;

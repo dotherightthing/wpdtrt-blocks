@@ -4,7 +4,7 @@
  * PHP variables are provided in wpdtrt_blocks_config.
  *
  * @version 1.0.0
- * @since   0.7.6
+ * @since   0.7.6 DTRT WordPress Plugin Boilerplate Generator
  */
 
 /*global document, $, jQuery, wpdtrt_blocks_config*/

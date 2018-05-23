@@ -20,7 +20,7 @@
  *
  * @package     WPDTRT_Blocks
  * @version     0.0.1
- * @since       0.7.6
+ * @since       0.7.6 DTRT WordPress Plugin Boilerplate Generator
  * @see https://developer.wordpress.org/plugins/the-basics/best-practices/#file-organization
  * @see https://developer.wordpress.org/plugins/the-basics/uninstall-methods/#method-2-uninstall-php
  */

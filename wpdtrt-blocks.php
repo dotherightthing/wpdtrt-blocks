@@ -98,11 +98,9 @@ if ( defined( 'WPDTRT_BLOCKS_TEST_DEPENDENCY' ) ) {
 require_once $project_root_path . 'vendor/autoload.php';
 
 // sub classes, not loaded via PSR-4.
-// comment out the ones you don't need, edit the ones you do.
+// remove the includes you don't need, edit the files you do need.
 require_once WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-plugin.php';
-//require_once WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-rewrite.php';
 require_once WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-shortcode.php';
-//require_once WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-taxonomy.php';
 require_once WPDTRT_BLOCKS_PATH . 'src/class-wpdtrt-blocks-widget.php';
 
 // log & trace helpers.
@@ -125,7 +123,6 @@ register_activation_hook( dirname( __FILE__ ), 'wpdtrt_blocks_helper_activate' )
 
 add_action( 'init', 'wpdtrt_blocks_plugin_init', 0 );
 add_action( 'init', 'wpdtrt_blocks_shortcode_init', 100 );
-//add_action( 'init', 'wpdtrt_blocks_taxonomy_init', 100 );
 add_action( 'widgets_init', 'wpdtrt_blocks_widget_init', 10 );
 
 register_deactivation_hook( dirname( __FILE__ ), 'wpdtrt_blocks_helper_deactivate' );

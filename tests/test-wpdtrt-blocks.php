@@ -26,7 +26,7 @@
 /**
  * WP_UnitTestCase unit tests for wpdtrt_blocks
  */
-class wpdtrt_blocksTest extends WP_UnitTestCase {
+class WPDTRT_BlocksTest extends WP_UnitTestCase {
 
 	/**
 	 * Compare two HTML fragments.
@@ -56,7 +56,7 @@ class wpdtrt_blocksTest extends WP_UnitTestCase {
 
 		$this->post_id_1 = $this->create_post( array(
 			'post_title'   => 'DTRT Blocks test',
-			'post_content' => 'This is a simple test'
+			'post_content' => 'This is a simple test',
 		));
 	}
 

@@ -8,7 +8,7 @@
  *    gulp dist --gulpfile ./vendor/dotherightthing/wpdtrt-plugin-boilerplate/gulpfile.js --cwd ./
  *
  * @package     WPDTRT_Blocks
- * @version 	1.1.6
+ * @version 	1.1.7
  * @since       0.7.6 DTRT WordPress Plugin Boilerplate Generator
  */
  

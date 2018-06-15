@@ -16,44 +16,44 @@
 // -------------------------------------------------------------------
 
 .wpdtrt-blocks-items {
-  @extend %wpdtrt-plugin-boilerplate--clear;
+    @extend %wpdtrt-plugin-boilerplate--clear;
 
-  background-color: $wpdtrt-blocks-bg-color;
-  color: $wpdtrt-blocks-text-color;
-  font-weight: bold;
-  font-size: .9em;
-  padding: 8px 0 0 8px;
-  margin-bottom: 8px;
+    background-color: $wpdtrt-blocks-bg-color;
+    color: $wpdtrt-blocks-text-color;
+    font-size: .9em;
+    font-weight: bold;
+    padding: 8px 0 0 8px;
+    margin-bottom: 8px;
 
-  ul,
-  li {
-    list-style: none;
-  }
-
-  li {
-    position: relative;
-    float: left;
-    margin: 0 8px 8px 0;
-    height: 150px;
-    width: 150px;
-
-    img {
-      width: 150px;
-      height: 150px;
+    ul,
+    li {
+        list-style: none;
     }
 
-    // enlargement = "1"
+    li {
+        position: relative;
+        float: left;
+        width: 150px;
+        height: 150px;
+        margin: 0 8px 8px 0;
 
-    > a::before {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      color: $wpdtrt-blocks-icon-color;
-      background-color: $wpdtrt-blocks-icon-bg-color;
-      content: "+";
-      padding: 8px;
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        // enlargement = "1"
+
+        > a::before {
+            content: '+';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background-color: $wpdtrt-blocks-icon-bg-color;
+            color: $wpdtrt-blocks-icon-color;
+            padding: 8px;
+        }
     }
-  }
 }
 
 // -------------------------------------------------------------------

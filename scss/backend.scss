@@ -13,38 +13,38 @@
 @import 'extends';
 
 .wpdtrt-blocks-items {
-  @extend .clear;
+    @extend .clear;
 
-  ul,
-  li {
-    float: left;
-  }
-
-  ul {
-    // numbering
-    counter-reset: blocks;
-  }
-
-  li {
-    position: relative;
-    margin: 0 8px 8px 0;
-    height: 150px;
-    width: 150px;
-
-    img {
-      width: 150px;
-      height: 150px;
+    ul,
+    li {
+        float: left;
     }
 
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: #fff;
-      background-color: #000;
-      counter-increment: blocks;
-      content: counter(blocks);
-      padding: 8px;
+    ul {
+        // numbering
+        counter-reset: blocks;
     }
-  }
+
+    li {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        margin: 0 8px 8px 0;
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        &::before {
+            content: counter(blocks);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            color: #fff;
+            padding: 8px;
+            counter-increment: blocks;
+        }
+    }
 }
